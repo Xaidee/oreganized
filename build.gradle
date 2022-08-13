@@ -113,6 +113,9 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${project.mc_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${project.mc_version}:${jei_version}")
 
+    implementation fg.deobf("curse.maven:detail-armor-bar-forge-520755:3723059")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:3834150")
+
     // For testing and showcasing with pretty shaders:
     runtimeOnly fg.deobf("curse.maven:oculus-581495:3821406")
     runtimeOnly fg.deobf("curse.maven:rubidium-574856:3749094")

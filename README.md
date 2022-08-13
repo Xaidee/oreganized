@@ -1,26 +1,32 @@
-# oreganized
-Oreganized Mod which expands ores and other items in vanilla minecraft
+<p align="center">
+    <img src="https://i.imgur.com/ptOIvrD.png">
+</p>
 
-**Currently added**
-- Silver Ore
-  - Can be mined with iron pickaxe or higher
-  - Generates naturally between level 30 and 40 with maximum vein size 3
-- Silver Block
-  - Can be mined with iron pickaxe or higher
-  - Craftable as normal blocks (9 silver ingots)
-- Silver Ingot
-  - Obtained when smelted silver ore in furnace or blast furnace
-  - Craftable from silver nuggets (1 silver block => 9 silver ingots)
-- Silver Nugget
-  - Craftable from silver ingot (1 silver ingot => 9 silver nuggets and backwards)
-- Silver Tinted (Golden, Diamond, Netherite) Sword
-  - Max 5% uses (Gold - 2, Diamond - about 80, Netherite - 102) from the original sword then the tint breaks
-  - Recieve a little experience when hitting undead mob
-- Silver Tinted (Golden, Diamond, Netherite) Armor
-  - *Currently no feature added*
-- Netherite nugget
-  - Craftable from netherite ingot (1 netherite ingot => 9 netherite nuggets and backwards)
-- Lead Ore
-  - Generates naturally between level 50 and 70 with maximum vein size 12
-- Lead Ingot
-- Lead Nugget
+<p align="center">
+
+  <a href="https://discord.gg/sA858vGruu">
+    <img alt="Discord" src="https://img.shields.io/discord/780149719611473930?color=ff8c5a&label=%20&labelColor=525474&logoColor=white&style=for-the-badge&logo=discord">
+  </a>
+
+  <a href="https://www.curseforge.com/minecraft/mc-mods/oreganized">
+    <img alt="CurseForge" src="https://img.shields.io/badge/Curseforge-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=Curseforge&logoColor=white">
+  </a>
+
+  <a href="https://twitter.com/Oreganized_mod">
+    <img alt="Twitter" src="https://img.shields.io/twitter/follow/Oreganized_mod?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=Twitter&logoColor=white">
+  </a>
+
+  <a href="https://www.patreon.com/teamgalena">
+    <img alt="Patreon" src="https://img.shields.io/badge/Patreon-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=Patreon&logoColor=white">
+  </a>
+</p>
+
+Oreganized is a mod focusing on adding new ores and metals to Minecraft. Currently it adds, Lead and Silver as base metals and a new alloy known as Electrum.
+
+This mod is designed to be a Vanilla plus mod while also adding unique uses and abilities to its content rather than just meaningless toolsets for a more engaging experience that tries to match the quality of Mojang's own implementations of new content.
+
+<p align="center">
+    <a href="https://www.akliz.net/galena">
+        <img alt="Akliz" src="https://i.imgur.com/aD9X866.png">
+    </a>
+</p>

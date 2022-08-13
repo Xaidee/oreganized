@@ -2,6 +2,10 @@ package me.gleep.oreganized;
 
 import com.google.common.collect.ImmutableBiMap;
 import com.google.common.collect.ImmutableList;
+import com.redlimerl.detailab.DetailArmorBar;
+import com.redlimerl.detailab.api.DetailArmorBarAPI;
+import com.redlimerl.detailab.api.render.ArmorBarRenderManager;
+import com.redlimerl.detailab.api.render.TextureOffset;
 import me.gleep.oreganized.blocks.client.ShrapnelBombRenderer;
 import me.gleep.oreganized.capabilities.CapabilityHandler;
 import me.gleep.oreganized.client.OreganizedClient;
@@ -24,6 +28,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.DispensibleContainerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -38,6 +43,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -185,9 +191,14 @@ public class Oreganized {
     private void doClientStuff(final FMLClientSetupEvent event) {
         OreganizedClient.registerBlockRenderers();
 
-
-
-
+        if (ModList.get().isLoaded("detailab")) {
+            ResourceLocation texture = new ResourceLocation(MOD_ID, "textures/gui/armor_bar.png");
+            DetailArmorBarAPI.customArmorBarBuilder().armor((ArmorItem) OItems.ELECTRUM_CHESTPLATE.get(), (ArmorItem) OItems.ELECTRUM_HELMET.get(), (ArmorItem) OItems.ELECTRUM_LEGGINGS.get(), (ArmorItem) OItems.ELECTRUM_BOOTS.get())
+                    .render((ItemStack itemStack) ->
+                            new ArmorBarRenderManager(texture, 18, 18,
+                                    new TextureOffset(9, 9), new TextureOffset(0, 9), new TextureOffset(9, 0), new TextureOffset(0, 0))
+                    ).register();
+        }
 
         event.enqueueWork(() -> ItemProperties.register(OItems.SILVER_INGOT.get(),
                 new ResourceLocation(Oreganized.MOD_ID + ":shine"),
@@ -199,81 +210,6 @@ public class Oreganized {
                 (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
                         p_174676_.getTag() != null ? p_174676_.getTag().getInt("Dist") : 8)
         );
-        /*event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_DIAMOND_BOOTS.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_DIAMOND_CHESTPLATE.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_DIAMOND_HELMET.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_DIAMOND_LEGGINGS.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_DIAMOND_SWORD.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STSBase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_GOLDEN_BOOTS.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_GOLDEN_CHESTPLATE.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_GOLDEN_HELMET.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_GOLDEN_LEGGINGS.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_GOLDEN_SWORD.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STSBase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_NETHERITE_BOOTS.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) -> 
-        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_NETHERITE_CHESTPLATE.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) -> 
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_NETHERITE_HELMET.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) -> 
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_NETHERITE_LEGGINGS.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) ->
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STABase.MAX_TINT_DURABILITY)
-        );
-        event.enqueueWork(() -> ItemProperties.register(RegistryHandler.SILVER_TINTED_NETHERITE_SWORD.get(),
-                new ResourceLocation(Oreganized.MOD_ID + ":tinted_damage"),
-                (ItemStack p_174676_, @Nullable ClientLevel p_174677_, @Nullable LivingEntity p_174678_, int p_174679_) -> 
-                        p_174676_.getTag() != null ? p_174676_.getTag().getInt("TintedDamage") : STSBase.MAX_TINT_DURABILITY)
-        );*/
     }
 
     private void registerRenderers( EntityRenderersEvent.RegisterRenderers event){

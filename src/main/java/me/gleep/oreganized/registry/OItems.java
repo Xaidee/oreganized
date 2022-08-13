@@ -8,9 +8,12 @@ import me.gleep.oreganized.items.tiers.OreganizedTiers;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.item.KnifeItem;
 
 import static me.gleep.oreganized.util.RegistryHandler.*;
 
@@ -80,4 +83,8 @@ public class OItems {
     public static final RegistryObject<Item> ELECTRUM_BOOTS = ITEMS.register("electrum_boots",
             () -> new ElectrumArmorItem(OreganizedArmorMaterials.ELECTRUM, EquipmentSlot.FEET)
     );
+
+    // Compatibility
+    public static final RegistryObject<Item> ELECTRUM_KNIFE = ITEMS.register("electrum_knife",
+            () -> new KnifeItem(OreganizedTiers.ELECTRUM, 0.5F, -1.8F, (new Item.Properties()).tab(ModList.get().isLoaded(FarmersDelight.MODID) ? FarmersDelight.CREATIVE_TAB : null)));
 }

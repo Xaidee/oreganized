@@ -3,6 +3,7 @@
   "item.minecraft.splash_potion.effect.stunning": "Splash Potion of Stunning",
   "item.minecraft.lingering_potion.effect.stunning": "Lingering Potion of Stunning",
   "item.minecraft.tipped_arrow.effect.stunning": "Arrow of Stunning",
+  "effect.oreganized.stunning": "Stunning",
 
   "advancements.story.melting_point.description": "Pick up Molten Lead from a cauldron",
   "advancements.story.melting_point.title": "Melting Point",
@@ -27,8 +28,6 @@
   "item.oreganized.electrum_ingot": "Electrum Ingot",
   "item.oreganized.electrum_nugget": "Electrum Nugget",
   "block.oreganized.electrum_block": "Block of Electrum",
-
-  "effect.oreganized.stunned": "Stunning",
 
   "engraving.fail": "This surface isn't smooth enough for engraving",
   "engraving.edit": "Engraving",
@@ -133,5 +132,6 @@
   "item.oreganized.netherite_nugget": "Netherite Nugget",
   "item.oreganized.silver_ingot": "Silver Ingot",
   "item.oreganized.silver_mirror": "Silver Mirror",
-  "item.oreganized.silver_nugget": "Silver Nugget"
+  "item.oreganized.silver_nugget": "Silver Nugget",
+  "item.oreganized.electrum_knife": "Electrum Knife"
 }

@@ -1,22 +1,23 @@
 modLoader="javafml" #mandatory
 loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-license='''
-MIT License
-Copyright (c) 2021 GLEEP ORANGE
-'''
-issueTrackerURL="https://github.com/GL33P-0R4NG3/oreganized/issues/" #optional
+license="MIT"
+issueTrackerURL="https://github.com/Xaidee/oreganised/issues/" #optional
 
 [[mods]] #mandatory
 modId="oreganized" #mandatory
 version="1.18.2-1.0.0-hotfix" #mandatory
-displayName="Oreganized Mod" #mandatory
-updateJSONURL="https://www.curseforge.com/minecraft/mc-mods/oreganized-mod/files" #optional
-displayURL="https://www.curseforge.com/minecraft/mc-mods/oreganized-mod" #optional
+displayName="Oreganized" #mandatory
+updateJSONURL="https://www.curseforge.com/minecraft/mc-mods/oreganized/files" #optional
+displayURL="https://www.curseforge.com/minecraft/mc-mods/oreganized" #optional
 logoFile="oreganized.png" #optional
-credits="Thanks for this Oreganized mod goes to our active () members on our discord server!" #optional
-authors="<Gl33p_0r4ange>, Agent M, zKryle" #optional
+logoBlur=false
+itemIcon="oreganized:silver_ore"
+configBackground="oreganized:textures/block/glance_bricks.png"
+credits="Thanks to our wonderful Patreon members and those who help participate in discussions on our Discord server!" #optional
+authors="Xaidee as part of Team Galena" #optional
 description='''
-Expands vanilla stuff.
+Oreganized is a mod focusing on adding new ores and metals to Minecraft. Currently it adds, Lead and Silver as base metals and a new alloy known as Electrum.
+This mod is designed to be a Vanilla plus mod while also adding unique uses and abilities to its content rather than just meaningless toolsets for a more engaging experience that tries to match the quality of Mojang's own implementations of new content.
 '''
 
 [[dependencies.oreganized]] #optional

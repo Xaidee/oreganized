@@ -1,4 +1,0 @@
-Other:
-- Updated to Minecraft: 1.17.1, Forge: 37.0.22 (forge is in beta)
-- Without Entities (Block Entity and entities itself)
-- Fixed bug where there was a small chance that random text appeared in stone on one side
