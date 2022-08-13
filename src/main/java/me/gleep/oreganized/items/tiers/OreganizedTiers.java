@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 
 public enum OreganizedTiers implements Tier {
     LEAD(0, 150, 7.0F, 1.5F, 8, () -> Ingredient.of(OItems.LEAD_INGOT.get())),
-    ELECTRUM(5,1279,8.2F,4.0F,15,() -> Ingredient.of(OItems.ELECTRUM_INGOT.get()));
+    ELECTRUM(4,1561,11.0F,3.0F,18,() -> Ingredient.of(OItems.ELECTRUM_INGOT.get()));
 
     private final int level;
     private final int durability;

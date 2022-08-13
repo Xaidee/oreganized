@@ -11,7 +11,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum OreganizedArmorMaterials implements ArmorMaterial {
-    ELECTRUM("electrum", 32, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_CHAIN, 3.0F, 0.0F, () -> Ingredient.of(OItems.ELECTRUM_INGOT.get()));
+    ELECTRUM("electrum", 33, new int[]{3, 6, 8, 3}, 20, SoundEvents.ARMOR_EQUIP_CHAIN, 2.0F, 0.0F, () -> Ingredient.of(OItems.ELECTRUM_INGOT.get()));
 
     private static final int[] DURABILITY = new int[]{13, 15, 16, 11};
     private final String name;

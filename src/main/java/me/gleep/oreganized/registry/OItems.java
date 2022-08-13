@@ -47,13 +47,13 @@ public class OItems {
             () -> new ElectrumPickaxeItem(OreganizedTiers.ELECTRUM, 1, -2.6F)
     );
     public static final RegistryObject<Item> ELECTRUM_AXE = ITEMS.register("electrum_axe",
-            () -> new AxeItem(OreganizedTiers.ELECTRUM, 5.0F, -3.0F, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TOOLS))
+            () -> new AxeItem(OreganizedTiers.ELECTRUM, 5.0F, -2.8F, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TOOLS))
     );
     public static final RegistryObject<Item> ELECTRUM_SHOVEL = ITEMS.register("electrum_shovel",
-            () -> new ShovelItem(OreganizedTiers.ELECTRUM, 1.5F, -3.0F, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TOOLS))
+            () -> new ShovelItem(OreganizedTiers.ELECTRUM, 1.5F, -2.8F, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TOOLS))
     );
     public static final RegistryObject<Item> ELECTRUM_HOE = ITEMS.register("electrum_hoe",
-            () -> new HoeItem(OreganizedTiers.ELECTRUM, -4, 0.0F, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TOOLS))
+            () -> new HoeItem(OreganizedTiers.ELECTRUM, -3, 0.2F, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TOOLS))
     );
 
     public static final RegistryObject<Item> BUSH_HAMMER = ITEMS.register("bush_hammer", BushHammer::new);
@@ -61,7 +61,7 @@ public class OItems {
     // Misc tools
     public static final RegistryObject<Item> SILVER_MIRROR = ITEMS.register("silver_mirror", SilverMirror::new);
 
-    public static final RegistryObject<Item> LEAD_BOLT = ITEMS.register("lead_bolt", ItemBase::new);
+    //public static final RegistryObject<Item> LEAD_BOLT = ITEMS.register("lead_bolt", ItemBase::new);
 
     public static final RegistryObject<Item> MOLTEN_LEAD_BUCKET = ITEMS.register("molten_lead_bucket", () -> new SolidBucketItem(OBlocks.MOLTEN_LEAD_BLOCK.get(),
             SoundEvents.BUCKET_EMPTY_LAVA, new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS).stacksTo(1))
