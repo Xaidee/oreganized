@@ -2,15 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "A": {
-      "item": "oreganized:black_crystal_glass"
+      "item": "oreganized:silver_nugget"
     }
   },
   "pattern": [
     "AAA",
+    "AAA",
     "AAA"
   ],
   "result": {
-    "count": 16,
-    "item": "oreganized:black_crystal_glass_pane"
+    "item": "oreganized:silver_ingot"
   }
 }

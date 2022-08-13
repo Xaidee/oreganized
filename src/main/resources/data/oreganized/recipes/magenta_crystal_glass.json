@@ -1,21 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "crystal_glass",
-  "pattern": [
-    "xxx",
-    "x#x",
-    "xxx"
-  ],
   "key": {
-    "x": {
+    "A": {
       "item": "minecraft:magenta_stained_glass"
     },
-    "#": {
+    "B": {
       "tag": "forge:ingots/lead"
     }
   },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
   "result": {
-    "item": "oreganized:magenta_crystal_glass",
-    "count": 8
+    "item": "oreganized:magenta_crystal_glass"
   }
 }

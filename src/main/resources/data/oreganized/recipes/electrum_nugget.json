@@ -5,9 +5,8 @@
       "item": "oreganized:electrum_ingot"
     }
   ],
-  "result":
-  {
-    "item": "oreganized:electrum_nugget",
-    "count": 9
+  "result": {
+    "count": 9,
+    "item": "oreganized:electrum_nugget"
   }
 }

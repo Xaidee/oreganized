@@ -5,9 +5,8 @@
       "item": "oreganized:lead_ingot"
     }
   ],
-  "result":
-  {
-    "item": "oreganized:lead_nugget",
-    "count": 9
+  "result": {
+    "count": 9,
+    "item": "oreganized:lead_nugget"
   }
 }

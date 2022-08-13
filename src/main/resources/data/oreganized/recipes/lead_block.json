@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "xx ",
-    "xx ",
-    "   "
-  ],
   "key": {
-    "x": {
+    "A": {
       "item": "oreganized:lead_ingot"
     }
   },
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
   "result": {
-    "item": "oreganized:lead_block",
-    "count": 1
+    "item": "oreganized:lead_block"
   }
 }

@@ -5,9 +5,8 @@
       "item": "oreganized:silver_ingot"
     }
   ],
-  "result":
-  {
-    "item": "oreganized:silver_nugget",
-    "count": 9
+  "result": {
+    "count": 9,
+    "item": "oreganized:silver_nugget"
   }
 }

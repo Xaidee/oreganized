@@ -1,21 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern":
-  [
-    "xxx",
-    "xxx",
-    "xxx"
-  ],
-  "key":
-  {
-    "x":
-    {
+  "key": {
+    "A": {
       "item": "oreganized:electrum_ingot"
     }
   },
-  "result":
-  {
-    "item": "oreganized:electrum_block",
-    "count": 1
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "result": {
+    "item": "oreganized:electrum_block"
   }
 }

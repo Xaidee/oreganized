@@ -1,23 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "xxx",
-    "rrs",
-    "xxx"
-  ],
   "key": {
-    "x": {
-      "tag": "forge:cobblestone"
+    "A": {
+      "tag": "minecraft:stone_crafting_materials"
     },
-    "r": {
+    "B": {
       "tag": "forge:dusts/redstone"
     },
-    "s": {
+    "C": {
       "tag": "forge:ingots/silver"
     }
   },
+  "pattern": [
+    "AAA",
+    "BBC",
+    "AAA"
+  ],
   "result": {
-    "item": "oreganized:exposer",
-    "count": 1
+    "item": "oreganized:exposer"
   }
 }

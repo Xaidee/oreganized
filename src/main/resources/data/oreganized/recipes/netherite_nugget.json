@@ -1,14 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "netherite_ingot",
   "ingredients": [
     {
-      "tag": "forge:ingots/netherite"
+      "item": "minecraft:netherite_ingot"
     }
   ],
-  "result":
-  {
-    "item": "oreganized:netherite_nugget",
-    "count": 9
+  "result": {
+    "count": 9,
+    "item": "oreganized:netherite_nugget"
   }
 }
