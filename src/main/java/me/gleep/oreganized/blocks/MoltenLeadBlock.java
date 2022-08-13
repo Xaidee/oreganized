@@ -127,12 +127,12 @@ public class MoltenLeadBlock extends Block implements BucketPickup {
     }
 
     @Override
-    public VoxelShape getShape( BlockState p_60555_ , BlockGetter p_60556_ , BlockPos p_60557_ , CollisionContext p_60558_ ){
-        if(((EntityCollisionContext) p_60558_).getEntity() != null){
-            return p_60558_.isHoldingItem( Items.BUCKET )
-                    || p_60558_.isHoldingItem( OItems.MOLTEN_LEAD_BUCKET.get() ) ? Shapes.block() : Shapes.empty();
+    public VoxelShape getShape( BlockState state , BlockGetter world , BlockPos pos , CollisionContext ctx ){
+        if (((EntityCollisionContext) ctx).getEntity() instanceof Player player) {
+            return player.getMainHandItem().is(Items.BUCKET) || player.getMainHandItem().is(OItems.MOLTEN_LEAD_BUCKET.get()) ||
+                    player.getOffhandItem().is(Items.BUCKET) || player.getOffhandItem().is(OItems.MOLTEN_LEAD_BUCKET.get())
+                    ? Shapes.block() : Shapes.empty();
         }
-
         return Shapes.block();
     }
 
