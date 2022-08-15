@@ -276,14 +276,13 @@ public class ModEvents {
     public static void applyLeadEffect( LivingEntityUseItemEvent.Finish event ) {
         if (event.getItem().getItem().isEdible()) {
             if (event.getEntityLiving() instanceof Player player) {
+                boolean apply = player.getInventory().offhand.get( 0 ).is(OTags.Items.LEAD_SOURCE);
                 for (int i = 0; i < 9; i++){
-                    if (player.getInventory().items.get( i ).is(OTags.Items.INGOTS_LEAD) || player.getInventory().items.get( i ).is(OTags.Items.LEAD_SOURCE)) {
-                        player.addEffect( new MobEffectInstance( OEffects.STUNNING.get(), 40 * 20 ) );
-                        player.addEffect( new MobEffectInstance( MobEffects.POISON, 200 ) );
-                        return;
-                    }
+                    apply = apply || (player.getInventory().items.get( i ).is(OTags.Items.LEAD_SOURCE));
+                    if (apply) break;
                 }
-                if (player.getInventory().offhand.get( 0 ).is(OTags.Items.INGOTS_LEAD) || player.getInventory().items.get( 0 ).is(OTags.Items.LEAD_SOURCE)) {
+
+                if (apply) {
                     player.addEffect( new MobEffectInstance( OEffects.STUNNING.get(), 40 * 20 ) );
                     player.addEffect( new MobEffectInstance( MobEffects.POISON, 200 ) );
                 }

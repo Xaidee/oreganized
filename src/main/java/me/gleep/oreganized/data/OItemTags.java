@@ -32,8 +32,8 @@ public class OItemTags extends ItemTagsProvider {
     @Override
     protected void addTags() {
         // Oreganized
-        tag(LEAD_SOURCE).addTags(INGOTS_LEAD, NUGGETS_LEAD, ORES_LEAD).add(
-                OItems.BUSH_HAMMER.get(), OItems.MOLTEN_LEAD_BUCKET.get()
+        tag(LEAD_SOURCE).addTags(INGOTS_LEAD, NUGGETS_LEAD, ORES_LEAD, RAW_MATERIALS_LEAD, STORAGE_BLOCKS_LEAD, STORAGE_BLOCKS_RAW_LEAD).add(
+            OItems.BUSH_HAMMER.get(), OItems.MOLTEN_LEAD_BUCKET.get()
         );
         tag(CONSUMABLE).add(ForgeRegistries.ITEMS.getValues().stream().filter(Item::isEdible).toList().toArray(new Item[20]));
         copy(OTags.Blocks.CRYSTAL_GLASS, CRYSTAL_GLASS);
