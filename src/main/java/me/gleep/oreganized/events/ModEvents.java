@@ -20,8 +20,6 @@ import me.gleep.oreganized.registry.OTags;
 import me.gleep.oreganized.tools.STSBase;
 import me.gleep.oreganized.util.messages.UpdateClientEngravedBlocks;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.client.Camera;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -199,7 +197,7 @@ public class ModEvents {
             }
         }
 
-        IEngravedBlocks cap = Minecraft.getInstance().player.level.getCapability(CapabilityEngravedBlocks.ENGRAVED_BLOCKS_CAPABILITY).orElse(null);
+        IEngravedBlocks cap = level.getCapability(CapabilityEngravedBlocks.ENGRAVED_BLOCKS_CAPABILITY).orElse(null);
         if (cap.isEngraved(pos) && item.getItem() instanceof AxeItem) {
             event.getPlayer().swing(event.getHand());
             level.playSound(event.getPlayer(), pos, SoundEvents.AXE_SCRAPE, SoundSource.BLOCKS, 1.0F, 1.0F);
