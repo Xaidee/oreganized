@@ -9,6 +9,7 @@ import com.redlimerl.detailab.api.render.TextureOffset;
 import me.gleep.oreganized.blocks.client.ShrapnelBombRenderer;
 import me.gleep.oreganized.capabilities.CapabilityHandler;
 import me.gleep.oreganized.client.OreganizedClient;
+import me.gleep.oreganized.compat.FarmersDelightCompat;
 import me.gleep.oreganized.data.OBlockTags;
 import me.gleep.oreganized.data.OItemTags;
 import me.gleep.oreganized.data.OSoundDefinitions;
@@ -75,6 +76,10 @@ public class Oreganized {
         bus.addListener(this::gatherData);
 
         MinecraftForge.EVENT_BUS.addListener(OreganizedFeatures::onBiomeLoadingEvent);
+
+        if (ModList.get().isLoaded("farmersdelight")) {
+            FarmersDelightCompat.init();
+        }
 
         DeferredRegister<?>[] registers = {
                 //OBlockEntities.BLOCK_ENTITIES,
