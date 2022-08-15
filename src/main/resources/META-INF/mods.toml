@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/Xaidee/oreganised/issues/" #optional
 
 [[mods]] #mandatory
 modId="oreganized" #mandatory
-version="1.18.2-1.0.3" #mandatory
+version="1.18.2-1.0.4" #mandatory
 displayName="Oreganized" #mandatory
 updateJSONURL="https://www.curseforge.com/minecraft/mc-mods/oreganized/files" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/oreganized" #optional
