@@ -4,6 +4,9 @@
     "#forge:ingots/lead",
     "#forge:nuggets/lead",
     "#forge:ores/lead",
+    "#forge:raw_materials/lead",
+    "#forge:storage_blocks/lead",
+    "#forge:storage_blocks/raw_lead",
     "oreganized:bush_hammer",
     "oreganized:molten_lead_bucket"
   ]

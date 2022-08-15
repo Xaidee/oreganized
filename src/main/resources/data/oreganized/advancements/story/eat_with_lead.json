@@ -20,31 +20,23 @@
       "trigger": "minecraft:effects_changed",
       "conditions": {
         "effects": {
-          "oreganized:stunned": {}
+          "oreganized:stunning": {}
         }
       }
     },
     "have_lead": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "oreganized:lead_ingot",
-              "oreganized:raw_lead",
-              "oreganized:lead_nugget",
-              "oreganized:raw_lead_block",
-              "oreganized:lead_block"
-            ]
-          }
-        ]
+        "item": {
+          "tag": "oreganized:lead_source"
+        }
       }
     },
     "eat": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
-          "tag": "oreganized:edible"
+          "tag": "oreganized:consumable"
         }
       }
     }
