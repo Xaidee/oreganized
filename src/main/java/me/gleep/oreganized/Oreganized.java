@@ -82,7 +82,7 @@ public class Oreganized {
         }
 
         DeferredRegister<?>[] registers = {
-                //OBlockEntities.BLOCK_ENTITIES,
+                OBlockEntities.BLOCK_ENTITIES,
                 OBlocks.BLOCKS,
                 OEffects.EFFECTS,
                 OEntityTypes.ENTITIES,
