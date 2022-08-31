@@ -10,7 +10,7 @@
   "music.disc.18": {
     "sounds": [
       {
-        "name": "oreganized:music/disc/pillaged",
+        "name": "oreganized:music/disc/18",
         "stream": true
       }
     ]
@@ -18,7 +18,7 @@
   "music.disc.shulk": {
     "sounds": [
       {
-        "name": "oreganized:music/disc/pillaged",
+        "name": "oreganized:music/disc/shulk",
         "stream": true
       }
     ]
