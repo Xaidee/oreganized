@@ -12,7 +12,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -39,6 +38,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
+import java.util.Random;
 import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 
@@ -102,16 +102,16 @@ public class MoltenLeadCauldronBlock extends AbstractCauldronBlock implements Ca
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
         this.tick(state, world, pos, random);
     }
 
         @Override
-    public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
         if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         int max_age = AGE.getPossibleValues().size();
         int age = state.getValue(AGE);
-        if (age < max_age && random.nextInt(1) == 0) {
+        if (age < max_age && random.nextInt(2) == 0) {
             BlockState below = world.getBlockState(pos.below());
             if (below.is(OTags.Blocks.FIRE_SOURCE) || below.getFluidState().is(FluidTags.LAVA)) {
                 world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));

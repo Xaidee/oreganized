@@ -35,8 +35,8 @@ public class StunningEffect extends MobEffect {
     }
 
     @SubscribeEvent // applyStunned for Mobs
-    public static void applyStunned(LivingEvent.LivingTickEvent event) {
-        LivingEntity entity = event.getEntity();
+    public static void applyStunned(LivingEvent.LivingUpdateEvent event) {
+        LivingEntity entity = (LivingEntity) event.getEntity();
         if ((!(entity instanceof Player)) && entity.hasEffect(OEffects.STUNNING.get()) && flag) {
             // Copied from LivingEntity.aiStep() when isImmobile() is true
             entity.setJumping(false);
@@ -48,7 +48,8 @@ public class StunningEffect extends MobEffect {
     @SubscribeEvent // applyStunned for Players
     public static void applyStunned(MovementInputUpdateEvent event) {
         Input input = event.getInput(); // Gets player movement input
-        if (event.getEntity().hasEffect(OEffects.STUNNING.get()) && flag) {
+        LivingEntity entity = (LivingEntity) event.getEntity();
+        if (entity.hasEffect(OEffects.STUNNING.get()) && flag) {
             // Disable all movement related input by setting it to false or 0
             input.up = false;
             input.down = false;

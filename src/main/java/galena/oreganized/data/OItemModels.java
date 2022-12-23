@@ -5,9 +5,7 @@ import galena.oreganized.data.provider.OItemModelProvider;
 import galena.oreganized.index.OBlocks;
 import galena.oreganized.index.OItems;
 import galena.oreganized.integration.farmersdelight.FDCompatRegistry;
-import galena.oreganized.integration.nethersdelight.NDCompatRegistry;
-import galena.oreganized.integration.quark.QCompatRegistry;
-import galena.oreganized.integration.quark.entity.Boltarang;
+import galena.oreganized.integration.modestmining.MMCompatRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -43,6 +41,14 @@ public class OItemModels extends OItemModelProvider {
         normalItem(OItems.ELECTRUM_LEGGINGS);
         normalItem(OItems.ELECTRUM_BOOTS);
         normalItem(OItems.SHRAPNEL_BOMB_MINECART);
+        normalItem(MMCompatRegistry.LEAD_PLATING);
+        normalItem(MMCompatRegistry.SILVER_PLATING);
+        normalItem(MMCompatRegistry.ELECTRUM_PLATING);
+        normalItem(MMCompatRegistry.LEAD_PIECE);
+        normalItem(MMCompatRegistry.SILVER_PIECE);
+        normalItem(MMCompatRegistry.ELECTRUM_PIECE);
+        normalItem(MMCompatRegistry.LEAD_DUST);
+        normalItem(MMCompatRegistry.SILVER_DUST);
 
         toolItem(OItems.BUSH_HAMMER);
         toolItem(OItems.ELECTRUM_SWORD);
@@ -51,7 +57,6 @@ public class OItemModels extends OItemModelProvider {
         toolItem(OItems.ELECTRUM_AXE);
         toolItem(OItems.ELECTRUM_HOE);
         toolItem(FDCompatRegistry.ELECTRUM_KNIFE);
-        toolItem(NDCompatRegistry.ELECTRUM_MACHETE);
 
         block(OBlocks.GLANCE);
         block(OBlocks.POLISHED_GLANCE);

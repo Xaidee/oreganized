@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab_top",
   "textures": {
-    "bottom": "oreganized:block/glance_bricks",
     "side": "oreganized:block/glance_bricks",
+    "bottom": "oreganized:block/glance_bricks",
     "top": "oreganized:block/glance_bricks"
   }
 }

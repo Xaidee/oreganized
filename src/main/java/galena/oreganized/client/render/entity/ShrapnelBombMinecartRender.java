@@ -2,6 +2,7 @@ package galena.oreganized.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import galena.oreganized.content.entity.MinecartShrapnelBomb;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.BlockRenderDispatcher;
@@ -15,9 +16,9 @@ public class ShrapnelBombMinecartRender extends MinecartRenderer<MinecartShrapne
 
     private final BlockRenderDispatcher blockRenderer;
 
-    public ShrapnelBombMinecartRender(EntityRendererProvider.Context p_174424_) {
-        super(p_174424_, ModelLayers.TNT_MINECART);
-        this.blockRenderer = p_174424_.getBlockRenderDispatcher();
+    public ShrapnelBombMinecartRender(EntityRendererProvider.Context context) {
+        super(context, ModelLayers.TNT_MINECART);
+        this.blockRenderer = Minecraft.getInstance().getBlockRenderer();
     }
 
     protected void renderMinecartContents(MinecartShrapnelBomb p_116151_, float p_116152_, BlockState p_116153_, PoseStack p_116154_, MultiBufferSource p_116155_, int p_116156_) {

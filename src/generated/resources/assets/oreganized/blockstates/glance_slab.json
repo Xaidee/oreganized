@@ -1,13 +1,13 @@
 {
   "variants": {
+    "type=top": {
+      "model": "oreganized:block/glance_slab_top"
+    },
     "type=bottom": {
       "model": "oreganized:block/glance_slab"
     },
     "type=double": {
       "model": "oreganized:block/glance"
-    },
-    "type=top": {
-      "model": "oreganized:block/glance_slab_top"
     }
   }
 }

@@ -5,7 +5,6 @@ import galena.oreganized.content.entity.ExposerBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -16,9 +15,10 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public class ExposerBlock extends DirectionalBlock implements ISilver, EntityBlock {
 
@@ -64,7 +64,7 @@ public class ExposerBlock extends DirectionalBlock implements ISilver, EntityBlo
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+    public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
         int dist = getUndeadDistance(world, pos, null, TexturedFrames);
         world.setBlockAndUpdate(pos, state.setValue(LEVEL, LEVEL.getPossibleValues().size() - dist));
         world.scheduleTick(pos, state.getBlock(), 1);

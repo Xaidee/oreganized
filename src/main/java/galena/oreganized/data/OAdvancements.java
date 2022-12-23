@@ -11,10 +11,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.Set;
@@ -44,8 +41,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:adventure/root"))
                     .display(
                             OItems.SILVER_MIRROR.get(),
-                            Component.translatable("advancements.adventure.mirror_mirror.title"),
-                            Component.translatable("advancements.adventure.mirror_mirror.description"),
+                            Component.nullToEmpty("advancements.adventure.mirror_mirror.title"),
+                            Component.nullToEmpty("advancements.adventure.mirror_mirror.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -59,8 +56,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:story/upgrade_tools"))
                     .display(
                             OItems.LEAD_INGOT.get(),
-                            Component.translatable("advancements.story.eat_with_lead.title"),
-                            Component.translatable("advancements.story.eat_with_lead.description"),
+                            Component.nullToEmpty("advancements.story.eat_with_lead.title"),
+                            Component.nullToEmpty("advancements.story.eat_with_lead.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -76,8 +73,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:story/iron_tools"))
                     .display(
                             OItems.SILVER_INGOT.get(),
-                            Component.translatable("advancements.story.obtain_silver.title"),
-                            Component.translatable("advancements.story.obtain_silver.description"),
+                            Component.nullToEmpty("advancements.story.obtain_silver.title"),
+                            Component.nullToEmpty("advancements.story.obtain_silver.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -91,8 +88,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(obtain_silver)
                     .display(
                             OItems.ELECTRUM_CHESTPLATE.get(),
-                            Component.translatable("advancements.story.electrum_gear.title"),
-                            Component.translatable("advancements.story.electrum_gear.description"),
+                            Component.nullToEmpty("advancements.story.electrum_gear.title"),
+                            Component.nullToEmpty("advancements.story.electrum_gear.description"),
                             null,
                             FrameType.CHALLENGE,
                             true,
@@ -108,8 +105,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:story/upgrade_tools"))
                     .display(
                             OItems.MOLTEN_LEAD_BUCKET.get(),
-                            Component.translatable("advancements.story.melting_point.title"),
-                            Component.translatable("advancements.story.melting_point.description"),
+                            Component.nullToEmpty("advancements.story.melting_point.title"),
+                            Component.nullToEmpty("advancements.story.melting_point.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -124,15 +121,15 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(melting_point)
                     .display(
                             OItems.MUSIC_DISC_STRUCTURE.get(),
-                            Component.translatable("advancements.story.disc_smith.title"),
-                            Component.translatable("advancements.story.disc_smith.description"),
+                            Component.nullToEmpty("advancements.story.disc_smith.title"),
+                            Component.nullToEmpty("advancements.story.disc_smith.description"),
                             null,
                             FrameType.TASK,
                             true,
                             true,
                             false
                     )
-                    .addCriterion("use_disc_on_lead_cauldron", ItemInteractWithBlockTrigger.TriggerInstance.itemUsedOnBlock(new LocationPredicate.Builder().setBlock(new BlockPredicate(null, Set.of(OBlocks.MOLTEN_LEAD_CAULDRON.get()), StatePropertiesPredicate.ANY, NbtPredicate.ANY)), ItemPredicate.Builder.item().of(Items.MUSIC_DISC_11)))
+                    .addCriterion("use_disc_on_lead_cauldron", ItemUsedOnBlockTrigger.TriggerInstance.itemUsedOnBlock(new LocationPredicate.Builder().setBlock(new BlockPredicate(null, Set.of(OBlocks.MOLTEN_LEAD_CAULDRON.get()), StatePropertiesPredicate.ANY, NbtPredicate.ANY)), ItemPredicate.Builder.item().of(Items.MUSIC_DISC_11)))
                     .addCriterion("has_structure_disc", InventoryChangeTrigger.TriggerInstance.hasItems(OItems.MUSIC_DISC_STRUCTURE.get()))
                     .save(consumer, "oreganized:story/disc_smith");
         }

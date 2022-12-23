@@ -2,9 +2,9 @@
   "parent": "minecraft:block/observer",
   "textures": {
     "bottom": "oreganized:block/exposer_back",
-    "front": "oreganized:block/exposer_level_3",
-    "particle": "oreganized:block/exposer_level_3",
     "side": "oreganized:block/exposer_side",
-    "top": "oreganized:block/exposer_top"
+    "top": "oreganized:block/exposer_top",
+    "front": "oreganized:block/exposer_level_3",
+    "particle": "oreganized:block/exposer_level_3"
   }
 }

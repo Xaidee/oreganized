@@ -6,7 +6,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -20,6 +19,7 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.Random;
 
 @ParametersAreNonnullByDefault
 public class MoltenLeadFluid  extends ForgeFlowingFluid {
@@ -75,7 +75,7 @@ public class MoltenLeadFluid  extends ForgeFlowingFluid {
     }
 
     @Override
-    public void animateTick(Level world, BlockPos blockPos, FluidState fluidState, RandomSource random) {
+    public void animateTick(Level world, BlockPos blockPos, FluidState fluidState, Random random) {
         BlockPos abovePos = blockPos.above();
         if (world.getBlockState(abovePos).isAir() && !world.getBlockState(abovePos).isSolidRender(world, abovePos)) {
             if (random.nextInt(300) == 0) {

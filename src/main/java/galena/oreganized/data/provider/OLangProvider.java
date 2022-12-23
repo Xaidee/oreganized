@@ -2,10 +2,9 @@ package galena.oreganized.data.provider;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.data.HashCache;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
@@ -14,12 +13,15 @@ import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.commons.lang3.text.translate.JavaUnicodeEscaper;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 import java.util.function.Supplier;
 
@@ -39,7 +41,7 @@ public abstract class OLangProvider implements DataProvider {
     protected abstract void addTranslations();
 
     @Override
-    public void run(CachedOutput cache) throws IOException {
+    public void run(HashCache cache) throws IOException {
         addTranslations();
         if (!data.isEmpty())
             save(cache, data, this.gen.getOutputFolder().resolve("assets/" + modid + "/lang/" + locale + ".json"));
@@ -50,14 +52,19 @@ public abstract class OLangProvider implements DataProvider {
         return "Languages: " + locale;
     }
 
-    private void save(CachedOutput cache, Object object, Path target) throws IOException {
-        // TODO: DataProvider.saveStable handles the caching and hashing already, but creating the JSON Object this way seems unreliable. -C
-        JsonObject json = new JsonObject();
-        for (Map.Entry<String, String> pair : data.entrySet()) {
-            json.addProperty(pair.getKey(), pair.getValue());
+    private void save(HashCache cache, Object object, Path target) throws IOException {
+        String data = GSON.toJson(object);
+        data = JavaUnicodeEscaper.outsideOf(0, 0x7f).translate(data); // Escape unicode after the fact so that it's not double escaped by GSON
+        String hash = DataProvider.SHA1.hashUnencodedChars(data).toString();
+        if (!Objects.equals(cache.getHash(target), hash) || !Files.exists(target)) {
+            Files.createDirectories(target.getParent());
+
+            try (BufferedWriter bufferedwriter = Files.newBufferedWriter(target)) {
+                bufferedwriter.write(data);
+            }
         }
 
-        DataProvider.saveStable(cache, json, target);
+        cache.putNew(target, hash);
     }
 
     public void addBlock(Supplier<? extends Block> key, String name) {
@@ -169,7 +176,7 @@ public abstract class OLangProvider implements DataProvider {
 
     public void tryEntity(Supplier<? extends EntityType<?>> entity) {
         String key = entity.get().getDescriptionId();
-        String value = formatString(ForgeRegistries.ENTITY_TYPES.getKey(entity.get()).getPath());
+        String value = formatString(ForgeRegistries.ENTITIES.getKey(entity.get()).getPath());
         data.putIfAbsent(key, value);
     }
 

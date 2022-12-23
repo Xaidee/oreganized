@@ -20,7 +20,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Explosion;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.AABB;
@@ -87,6 +89,9 @@ public class MinecartShrapnelBomb extends AbstractMinecart {
         double d0 = this.getDeltaMovement().horizontalDistanceSqr();
         if (!p_38664_.isFire() && !p_38664_.isExplosion() && !(d0 >= (double)0.01F)) {
             super.destroy(p_38664_);
+            if (!p_38664_.isExplosion() && this.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+                this.spawnAtLocation(OBlocks.SHRAPNEL_BOMB.get());
+            }
         } else {
             if (this.fuse < 0) {
                 this.primeFuse();
@@ -94,11 +99,6 @@ public class MinecartShrapnelBomb extends AbstractMinecart {
             }
 
         }
-    }
-
-    @Override
-    protected Item getDropItem() {
-        return OItems.SHRAPNEL_BOMB_MINECART.get();
     }
 
     protected void explode(double p_38689_) {

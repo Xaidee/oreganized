@@ -7,7 +7,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,7 +26,7 @@ public class OParticleTypes {
 
 
     @SubscribeEvent
-    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+    public static void registerParticleFactories(ParticleFactoryRegisterEvent event) {
         ParticleEngine engine = Minecraft.getInstance().particleEngine;
 
         engine.register(DRIPPING_LEAD.get(), CustomDrippingParticle.LeadHangProvider::new);

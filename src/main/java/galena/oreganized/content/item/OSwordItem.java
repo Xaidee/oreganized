@@ -19,7 +19,7 @@ public class OSwordItem extends SwordItem {
 
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-        if (this.allowedIn(tab))
+        if (this.allowdedIn(tab))
             OItem.insert(new ItemStack(this), false, items, stack -> stack.getItem() == followItem);
     }
 }

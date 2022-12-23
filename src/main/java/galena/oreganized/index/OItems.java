@@ -54,5 +54,5 @@ public class OItems {
             () -> new ElectrumArmorItem(OArmorMaterials.ELECTRUM, EquipmentSlot.FEET));
 
     // Transportation
-    public static final RegistryObject<Item> SHRAPNEL_BOMB_MINECART = ITEMS.register("shrapnel_bomb_minecart", () -> new OMinecartItem(AbstractMinecart.Type.TNT, OEntityTypes.SHRAPNEL_BOMB_MINECART.get(), Items.TNT_MINECART));
+    public static final RegistryObject<Item> SHRAPNEL_BOMB_MINECART = ITEMS.register("shrapnel_bomb_minecart", () -> new OMinecartItem(AbstractMinecart.Type.TNT, OEntityTypes.SHRAPNEL_BOMB_MINECART, Items.TNT_MINECART));
 }

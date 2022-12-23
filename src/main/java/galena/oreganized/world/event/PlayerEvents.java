@@ -4,7 +4,6 @@ import galena.oreganized.Oreganized;
 import galena.oreganized.content.block.MoltenLeadCauldronBlock;
 import galena.oreganized.index.*;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.client.player.inventory.Hotbar;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -15,7 +14,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -23,14 +21,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
-import net.minecraftforge.event.entity.item.ItemEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import javax.swing.text.html.parser.Entity;
 
 @Mod.EventBusSubscriber(modid = Oreganized.MOD_ID)
 public class PlayerEvents {
@@ -54,11 +49,11 @@ public class PlayerEvents {
      **/
     @SubscribeEvent
     public static void blockItemInteractions(final PlayerInteractEvent.RightClickBlock event) {
-        Level world = event.getLevel();
+        Level world = event.getWorld();
         BlockPos pos = event.getPos();
         BlockState state = world.getBlockState(pos);
         ItemStack itemStack = event.getItemStack();
-        Player player = event.getEntity();
+        Player player = (Player) event.getEntity();
         InteractionHand hand = event.getHand();
 
         // Waxing (Using Honeycomb on a waxable block).
@@ -95,10 +90,10 @@ public class PlayerEvents {
 
     @SubscribeEvent
     public static void finishUsingItem(final LivingEntityUseItemEvent.Finish event) {
-        LivingEntity entity = event.getEntity();
+        LivingEntity entity = (LivingEntity) event.getEntity();
         ItemStack itemStack = event.getItem();
         if (itemStack.isEdible()) {
-            boolean leadPoisoning = entity.isInFluidType(OFluids.MOLTEN_LEAD_TYPE.get());
+            boolean leadPoisoning = entity.getFeetBlockState().equals(OFluids.MOLTEN_LEAD.get().defaultFluidState().createLegacyBlock()) || entity.isEyeInFluid(OTags.Fluids.MOLTEN_LEAD);
             if (entity instanceof Player player) {
                 for (int i = 0; i < 9; i++) {
                     if (player.getInventory().items.get(i).is(OTags.Items.LEAD_SOURCE))

@@ -5,9 +5,9 @@ import com.redlimerl.detailab.api.DetailArmorBarAPI;
 import com.redlimerl.detailab.api.render.ArmorBarRenderManager;
 import com.redlimerl.detailab.api.render.TextureOffset;
 import galena.oreganized.client.OreganizedClient;
+import galena.oreganized.client.render.gui.StunningOverlay;
 import galena.oreganized.content.block.MoltenLeadCauldronBlock;
 import galena.oreganized.data.*;
-import galena.oreganized.data.modifiers.OBiomeModifier;
 import galena.oreganized.index.*;
 import galena.oreganized.integration.CompatHandler;
 import galena.oreganized.integration.CompatHandlerClient;
@@ -21,18 +21,18 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FireBlock;
-import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.client.gui.ForgeIngameGui;
+import net.minecraftforge.client.gui.OverlayRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -61,7 +61,6 @@ public class Oreganized {
                 OEffects.EFFECTS,
                 OEntityTypes.ENTITIES,
                 OFluids.FLUIDS,
-                OFluids.TYPES,
                 OItems.ITEMS,
                 OParticleTypes.PARTICLES,
                 OPotions.POTIONS,
@@ -70,7 +69,6 @@ public class Oreganized {
                 OFeatures.FEATURES,
                 OFeatures.Configured.CONFIGURED_FEATURES,
                 OFeatures.Placed.PLACED_FEATURES,
-                OPaintingVariants.PAINTING_VARIANTS,
         };
 
         for (DeferredRegister<?> register : registers) {
@@ -84,10 +82,10 @@ public class Oreganized {
     }
 
     private void setup(FMLCommonSetupEvent event) {
-        FluidInteractionRegistry.addInteraction(OFluids.MOLTEN_LEAD_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
+        /*FluidInteractionRegistry.addInteraction(OFluids.MOLTEN_LEAD_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(
                 ForgeMod.WATER_TYPE.get(),
                 fluidState -> OBlocks.LEAD_BLOCK.get().defaultBlockState()
-        ));
+        ));*/
 
         event.enqueueWork(() -> {
 
@@ -146,6 +144,9 @@ public class Oreganized {
         CompatHandlerClient.setup(event);
         OreganizedClient.registerBlockRenderers();
 
+        MinecraftForge.EVENT_BUS.register(new StunningOverlay());
+        OverlayRegistry.registerOverlayAbove(ForgeIngameGui.FROSTBITE_ELEMENT, "stunning", new StunningOverlay());
+
         ItemProperties.register(OItems.SILVER_MIRROR.get(), new ResourceLocation("level"), (stack, world, entity, seed) -> {
             if(entity == null) {
                 return 8;
@@ -170,21 +171,22 @@ public class Oreganized {
         boolean client = event.includeClient();
         boolean server = event.includeServer();
 
-        generator.addProvider(client, new OBlockStates(generator, helper));
-        generator.addProvider(client, new OItemModels(generator, helper));
-        generator.addProvider(client, new OLang(generator));
-        generator.addProvider(client, new OSoundDefinitions(generator, helper));
-
-        generator.addProvider(server, new ORecipes(generator));
-        generator.addProvider(server, new OLootTables(generator));
-        OBlockTags blockTags = new OBlockTags(generator, helper);
-        generator.addProvider(server, blockTags);
-        generator.addProvider(server, new OItemTags(generator, blockTags, helper));
-        generator.addProvider(server, new OEntityTags(generator, helper));
-        generator.addProvider(server, new OAdvancements(generator, helper));
-        generator.addProvider(server, new OFluidTags(generator, helper));
-        generator.addProvider(server, new OBiomeTags(generator, helper));
-        generator.addProvider(server, new OPaintingVariantTags(generator, helper));
-        generator.addProvider(server, OBiomeModifier.register(event));
+        if (client) {
+            generator.addProvider(new OBlockStates(generator, helper));
+            generator.addProvider(new OItemModels(generator, helper));
+            generator.addProvider(new OLang(generator));
+            generator.addProvider(new OSoundDefinitions(generator, helper));
+        }
+        if (server) {
+            generator.addProvider(new ORecipes(generator));
+            generator.addProvider(new OLootTables(generator));
+            OBlockTags blockTags = new OBlockTags(generator, helper);
+            generator.addProvider(blockTags);
+            generator.addProvider(new OItemTags(generator, blockTags, helper));
+            generator.addProvider(new OEntityTags(generator, helper));
+            generator.addProvider(new OAdvancements(generator, helper));
+            generator.addProvider(new OFluidTags(generator, helper));
+            generator.addProvider(new OBiomeTags(generator, helper));
+        }
     }
 }

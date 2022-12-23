@@ -41,7 +41,7 @@ public class BushHammerItem extends DiggerItem {
 
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-        if (this.allowedIn(tab))
+        if (this.allowdedIn(tab))
             OItem.insert(new ItemStack(this), false, items, stack -> stack.getItem() == Items.FLINT_AND_STEEL);
     }
 }

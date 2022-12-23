@@ -55,7 +55,7 @@ public class OBlockItem extends BlockItem {
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
         if (this.followItem == null) super.fillItemCategory(tab, items);
-        if (this.allowedIn(tab) && this.followItem != null)
+        if (this.allowdedIn(tab) && this.followItem != null)
             OItem.insert(new ItemStack(this), false, items, stack -> stack.getItem() == followItem);
     }
 }

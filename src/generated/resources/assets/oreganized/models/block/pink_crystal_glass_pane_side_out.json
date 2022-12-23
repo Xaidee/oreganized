@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
   "textures": {
-    "edge": "oreganized:block/pink_crystal_glass_pane_top",
-    "pane": "oreganized:block/pink_crystal_glass_out"
+    "pane": "oreganized:block/pink_crystal_glass_out",
+    "edge": "oreganized:block/pink_crystal_glass_pane_top"
   }
 }

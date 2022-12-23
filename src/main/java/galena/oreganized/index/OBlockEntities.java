@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class OBlockEntities {
 
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Oreganized.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Oreganized.MOD_ID);
 
     public static final RegistryObject<BlockEntityType<?>> EXPOSER = BLOCK_ENTITIES.register("exposer", () -> BlockEntityType.Builder.of(ExposerBlockEntity::new, OBlocks.EXPOSER.get()).build(null));
 

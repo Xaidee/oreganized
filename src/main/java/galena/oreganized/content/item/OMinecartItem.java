@@ -26,21 +26,22 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class OMinecartItem extends MinecartItem {
 
     private static Item followItem = Items.HOPPER_MINECART;
-    public final EntityType<? extends AbstractMinecart> minecart;
+    public final Supplier<EntityType<MinecartShrapnelBomb>> minecart;
 
 
 
-    public OMinecartItem(AbstractMinecart.Type base, EntityType<? extends AbstractMinecart> minecart) {
+    public OMinecartItem(AbstractMinecart.Type base, Supplier<EntityType<MinecartShrapnelBomb>> minecart) {
         super(base, new Properties().tab(CreativeModeTab.TAB_TRANSPORTATION));
         this.minecart = minecart;
         DispenserBlock.registerBehavior(this, DISPENSE_ITEM_BEHAVIOR);
     }
 
-    public OMinecartItem(AbstractMinecart.Type base, EntityType<? extends AbstractMinecart> minecart, ItemLike follow) {
+    public OMinecartItem(AbstractMinecart.Type base, Supplier<EntityType<MinecartShrapnelBomb>> minecart, ItemLike follow) {
         super(base, new Properties()
                 .tab(Objects.requireNonNull(follow.asItem().getItemCategory()))
         );
@@ -59,7 +60,7 @@ public class OMinecartItem extends MinecartItem {
 
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
-        if (this.allowedIn(tab))
+        if (this.allowdedIn(tab))
             insert(new ItemStack(this), false, items, stack -> stack.getItem() == followItem);
     }
 
@@ -101,13 +102,13 @@ public class OMinecartItem extends MinecartItem {
                     d0 = 0.5D;
                 }
 
-                AbstractMinecart abstractminecart = createMinecart(level, (double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.0625D + d0, (double)blockpos.getZ() + 0.5D, this.minecart);
+                AbstractMinecart abstractminecart = createMinecart(level, (double)blockpos.getX() + 0.5D, (double)blockpos.getY() + 0.0625D + d0, (double)blockpos.getZ() + 0.5D, this.minecart.get());
                 if (itemstack.hasCustomHoverName()) {
                     abstractminecart.setCustomName(itemstack.getHoverName());
                 }
 
                 level.addFreshEntity(abstractminecart);
-                level.gameEvent(GameEvent.ENTITY_PLACE, blockpos, GameEvent.Context.of(context.getPlayer(), level.getBlockState(blockpos.below())));
+                level.gameEvent(GameEvent.ENTITY_PLACE, blockpos);
             }
 
             itemstack.shrink(1);

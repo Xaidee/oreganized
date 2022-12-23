@@ -12,7 +12,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -44,6 +43,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
+import java.util.Random;
 import java.util.function.Supplier;
 
 @ParametersAreNonnullByDefault
@@ -55,7 +55,7 @@ public class MoltenLeadBlock extends LiquidBlock {
     public static final VoxelShape STABLE_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
 
     public MoltenLeadBlock(Supplier<? extends FlowingFluid> fluid, Properties properties) {
-        super(fluid, properties.noCollission().strength(-1.0F, 3600000.0F).noLootTable().lightLevel((state) -> 8));
+        super(fluid, properties.noCollission().strength(-1.0F, 3600000.0F).noDrops().lightLevel((state) -> 8));
     }
 
     @Override
@@ -74,7 +74,7 @@ public class MoltenLeadBlock extends LiquidBlock {
 
     @Nullable
     @Override
-    public BlockPathTypes getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
+    public BlockPathTypes getAiPathNodeType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
         return BlockPathTypes.WALKABLE;
     }
 
@@ -106,7 +106,7 @@ public class MoltenLeadBlock extends LiquidBlock {
     }
 
     @Override
-    public void tick(BlockState pState , ServerLevel pLevel , BlockPos pPos , RandomSource pRandom ){
+    public void tick(BlockState pState , ServerLevel pLevel , BlockPos pPos , Random pRandom ){
         if (pLevel.getBlockState(pPos.below()).getBlock() == Blocks.AIR || pLevel.getBlockState(pPos.below()).is(BlockTags.REPLACEABLE_PLANTS)
                 || pLevel.getBlockState(pPos.below()).getFluidState().is(FluidTags.WATER)
                 || pLevel.getBlockState(pPos.below()).is(BlockTags.SMALL_FLOWERS)

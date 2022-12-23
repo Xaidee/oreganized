@@ -1,0 +1,10 @@
+{
+  "type": "oreganized:boulder",
+  "config": {
+    "start_pool": "oreganized:boulder",
+    "size": 1
+  },
+  "biomes": "#oreganized:has_structure/boulder",
+  "adapt_noise": false,
+  "spawn_overrides": {}
+}
