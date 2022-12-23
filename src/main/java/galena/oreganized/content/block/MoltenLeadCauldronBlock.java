@@ -98,7 +98,7 @@ public class MoltenLeadCauldronBlock extends AbstractCauldronBlock implements Ca
     }
 
     public int getAnalogOutputSignal(BlockState state, Level level, BlockPos blockPos) {
-        return state.getValue(AGE);
+        return state.getValue(AGE) + 1;
     }
 
     @Override
