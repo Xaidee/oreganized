@@ -71,25 +71,52 @@ public class OBlockTags extends BlockTagsProvider {
 
         );*/
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                OBlocks.LEAD_ORE.get(),
                 OBlocks.DEEPSLATE_LEAD_ORE.get(),
-                OBlocks.RAW_SILVER_BLOCK.get(),
+                OBlocks.RAW_LEAD_BLOCK.get(),
+
+                OBlocks.SILVER_ORE.get(),
                 OBlocks.DEEPSLATE_SILVER_ORE.get(),
+                OBlocks.RAW_SILVER_BLOCK.get(),
+
+                OBlocks.LEAD_BLOCK.get(),
+                OBlocks.SILVER_BLOCK.get(),
+                OBlocks.ELECTRUM_BLOCK.get(),
+
                 OBlocks.GLANCE.get(),
                 OBlocks.GLANCE_STAIRS.get(),
                 OBlocks.GLANCE_SLAB.get(),
                 OBlocks.POLISHED_GLANCE.get(),
-                OBlocks.CHISELED_GLANCE.get(),
                 OBlocks.GLANCE_WALL.get(),
                 OBlocks.GLANCE_BRICKS.get(),
                 OBlocks.GLANCE_BRICK_STAIRS.get(),
                 OBlocks.GLANCE_BRICK_SLAB.get(),
                 OBlocks.GLANCE_BRICK_WALL.get(),
+                OBlocks.CHISELED_GLANCE.get(),
                 OBlocks.SPOTTED_GLANCE.get(),
                 OBlocks.WAXED_SPOTTED_GLANCE.get(),
-                OBlocks.SILVER_ORE.get(),
-                OBlocks.LEAD_ORE.get(),
-                OBlocks.LEAD_BLOCK.get(),
-                OBlocks.SILVER_BLOCK.get()//,
+
+                OBlocks.EXPOSER.get(),
+
+                OBlocks.MOLTEN_LEAD_CAULDRON.get()
+        );
+        tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
+                OBlocks.WAXED_WHITE_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_ORANGE_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_MAGENTA_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_LIGHT_BLUE_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_YELLOW_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_LIME_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_PINK_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_GRAY_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_LIGHT_GRAY_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_CYAN_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_PURPLE_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_BLUE_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_BROWN_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_GREEN_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_RED_CONCRETE_POWDER.get(),
+                OBlocks.WAXED_BLACK_CONCRETE_POWDER.get()
         );
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(

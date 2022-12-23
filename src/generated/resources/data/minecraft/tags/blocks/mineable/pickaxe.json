@@ -1,23 +1,27 @@
 {
   "values": [
+    "oreganized:lead_ore",
     "oreganized:deepslate_lead_ore",
-    "oreganized:raw_silver_block",
+    "oreganized:raw_lead_block",
+    "oreganized:silver_ore",
     "oreganized:deepslate_silver_ore",
+    "oreganized:raw_silver_block",
+    "oreganized:lead_block",
+    "oreganized:silver_block",
+    "oreganized:electrum_block",
     "oreganized:glance",
     "oreganized:glance_stairs",
     "oreganized:glance_slab",
     "oreganized:polished_glance",
-    "oreganized:chiseled_glance",
     "oreganized:glance_wall",
     "oreganized:glance_bricks",
     "oreganized:glance_brick_stairs",
     "oreganized:glance_brick_slab",
     "oreganized:glance_brick_wall",
+    "oreganized:chiseled_glance",
     "oreganized:spotted_glance",
     "oreganized:waxed_spotted_glance",
-    "oreganized:silver_ore",
-    "oreganized:lead_ore",
-    "oreganized:lead_block",
-    "oreganized:silver_block"
+    "oreganized:exposer",
+    "oreganized:molten_lead_cauldron"
   ]
 }
