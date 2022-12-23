@@ -133,6 +133,7 @@ public class MoltenLeadCauldronBlock extends AbstractCauldronBlock implements Ca
             Item item = stack.getItem();
             player.awardStat(Stats.FILL_CAULDRON);
             player.awardStat(Stats.ITEM_USED.get(item));
+            if (!player.getAbilities().instabuild) stack.shrink(1);
             world.setBlockAndUpdate(pos, state);
             world.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0F, 1.0F);
             world.gameEvent(null, GameEvent.BLOCK_PLACE, pos);
