@@ -109,7 +109,7 @@ public class MoltenLeadCauldronBlock extends AbstractCauldronBlock implements Ca
         @Override
     public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
         if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        int max_age = AGE.getPossibleValues().size();
+        int max_age = AGE.getPossibleValues().size() - 1;
         int age = state.getValue(AGE);
         if (age < max_age && random.nextInt(2) == 0) {
             BlockState below = world.getBlockState(pos.below());
