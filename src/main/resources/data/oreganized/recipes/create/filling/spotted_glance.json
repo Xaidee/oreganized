@@ -16,7 +16,7 @@
   ],
   "conditions": [
     {
-      "modid": "farmersdelight",
+      "modid": "create",
       "type": "forge:mod_loaded"
     }
   ]
