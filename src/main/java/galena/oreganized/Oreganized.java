@@ -55,6 +55,8 @@ public class Oreganized {
         bus.addListener(this::clientSetup);
         bus.addListener(this::gatherData);
 
+        MinecraftForge.EVENT_BUS.addListener(OFeatures::onBiomeLoadingEvent);
+
         DeferredRegister<?>[] registers = {
                 OBlockEntities.BLOCK_ENTITIES,
                 OBlocks.BLOCKS,
@@ -66,9 +68,6 @@ public class Oreganized {
                 OPotions.POTIONS,
                 OSoundEvents.SOUNDS,
                 OStructures.STRUCTURES,
-                OFeatures.FEATURES,
-                OFeatures.Configured.CONFIGURED_FEATURES,
-                OFeatures.Placed.PLACED_FEATURES,
         };
 
         for (DeferredRegister<?> register : registers) {
@@ -88,6 +87,7 @@ public class Oreganized {
         ));*/
 
         event.enqueueWork(() -> {
+            OFeatures.registerOreFeatures();
 
             Map<Item, CauldronInteraction> EMPTY = CauldronInteraction.EMPTY;
             Map<Item, CauldronInteraction> WATER = CauldronInteraction.WATER;
