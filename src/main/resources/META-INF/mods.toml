@@ -5,13 +5,13 @@ issueTrackerURL="https://github.com/Xaidee/oreganised/issues/" #optional
 
 [[mods]] #mandatory
 modId="oreganized" #mandatory
-version="1.18-1.0.3" #mandatory
+version="${file.jarVersion}" #mandatory
 displayName="Oreganized" #mandatory
 updateJSONURL="https://www.curseforge.com/minecraft/mc-mods/oreganized/files" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/oreganized" #optional
 logoFile="oreganized.png" #optional
 logoBlur=false
-#itemIcon="oreganized:silver_ore"
+itemIcon="oreganized:silver_ore"
 configBackground="oreganized:textures/block/glance_bricks.png"
 credits="Thanks to our wonderful Patreon members and those who help participate in discussions on our Discord server!" #optional
 authors="Xaidee as part of Team Galena" #optional
