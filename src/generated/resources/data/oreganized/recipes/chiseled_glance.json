@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A",
+    "A"
+  ],
   "key": {
     "A": {
       "item": "oreganized:glance_slab"
     }
   },
-  "pattern": [
-    "A",
-    "A"
-  ],
   "result": {
     "item": "oreganized:chiseled_glance"
   }

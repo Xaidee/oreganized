@@ -123,7 +123,7 @@ public class ORecipeProvider extends RecipeProvider {
 
     public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike result, ItemLike ingredient, float exp, int count) {
         return SimpleCookingRecipeBuilder.smelting(Ingredient.of(new ItemStack(ingredient, count)), result, exp, 200)
-                .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()), has(ingredient));
+                .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath(), has(ingredient));
     }
 
     public SimpleCookingRecipeBuilder smeltingRecipeTag(ItemLike result, TagKey<Item> ingredient, float exp) {
@@ -147,7 +147,7 @@ public class ORecipeProvider extends RecipeProvider {
 
     public SimpleCookingRecipeBuilder blastingRecipe(ItemLike result, ItemLike ingredient, float exp, int count) {
         return SimpleCookingRecipeBuilder.blasting(Ingredient.of(new ItemStack(ingredient, count)), result, exp, 100)
-                .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()), has(ingredient));
+                .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath(), has(ingredient));
     }
 
     public SimpleCookingRecipeBuilder blastingRecipeTag(ItemLike result, TagKey<Item> ingredient, float exp) {
@@ -172,12 +172,12 @@ public class ORecipeProvider extends RecipeProvider {
 
     public SingleItemRecipeBuilder stonecutting(Supplier<Block> input, ItemLike result) {
         return SingleItemRecipeBuilder.stonecutting(Ingredient.of(input.get()), result)
-                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(input.get()), has(input.get()));
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(input.get()).getPath(), has(input.get()));
     }
 
     public SingleItemRecipeBuilder stonecutting(Supplier<Block> input, ItemLike result, int resultAmount) {
         return SingleItemRecipeBuilder.stonecutting(Ingredient.of(input.get()), result, resultAmount)
-                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(input.get()), has(input.get()));
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(input.get()).getPath(), has(input.get()));
     }
 
     public ShapelessRecipeBuilder makeWaxed(Supplier<Block> blockOut, Block blockIn) {
@@ -194,21 +194,21 @@ public class ORecipeProvider extends RecipeProvider {
 
     public void makeSlabStonecutting(Supplier<? extends Block> blockOut, Supplier<Block> blockIn, Consumer<FinishedRecipe> consumer) {
         makeSlab(blockOut, blockIn).save(consumer);
-        stonecutting(blockIn, blockOut.get(), 2).save(consumer, "oreganized:stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()));
+        stonecutting(blockIn, blockOut.get(), 2).save(consumer, "oreganized/stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()).getPath());
     }
 
     public void makeStairsStonecutting(Supplier<? extends Block> blockOut, Supplier<Block> blockIn, Consumer<FinishedRecipe> consumer) {
         makeStairs(blockOut, blockIn).save(consumer);
-        stonecutting(blockIn, blockOut.get()).save(consumer, "oreganized:stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()));
+        stonecutting(blockIn, blockOut.get()).save(consumer, "oreganized/stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()).getPath());
     }
 
     public void makeWallStonecutting(Supplier<? extends Block> blockOut, Supplier<Block> blockIn, Consumer<FinishedRecipe> consumer) {
         makeWall(blockOut, blockIn).save(consumer);
-        stonecutting(blockIn, blockOut.get()).save(consumer, "oreganized:stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()));
+        stonecutting(blockIn, blockOut.get()).save(consumer, "oreganized/stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()).getPath());
     }
 
     public void makeChiseledStonecutting(Supplier<? extends Block> blockOut, Supplier<Block> blockIn, Supplier<SlabBlock> slabIn, Consumer<FinishedRecipe> consumer) {
         makeChiseled(blockOut, slabIn).save(consumer);
-        stonecutting(blockIn, blockOut.get()).save(consumer, "oreganized:stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()));
+        stonecutting(blockIn, blockOut.get()).save(consumer, "oreganized/stonecutting/" + ForgeRegistries.ITEMS.getKey(blockOut.get().asItem()).getPath());
     }
 }

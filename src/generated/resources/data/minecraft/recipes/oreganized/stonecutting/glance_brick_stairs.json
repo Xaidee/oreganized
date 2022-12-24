@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "oreganized:glance_bricks"
+  },
+  "result": "oreganized:glance_brick_stairs",
+  "count": 1
+}

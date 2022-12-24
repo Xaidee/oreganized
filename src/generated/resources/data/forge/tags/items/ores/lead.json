@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "oreganized:lead_ore",
     "oreganized:deepslate_lead_ore"

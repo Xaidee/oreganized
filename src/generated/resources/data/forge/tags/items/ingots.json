@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "#forge:ingots/silver",
     "#forge:ingots/lead",

@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "A": {
-      "item": "oreganized:glance"
-    }
-  },
   "pattern": [
     "A  ",
     "AA ",
     "AAA"
   ],
+  "key": {
+    "A": {
+      "item": "oreganized:glance"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "oreganized:glance_stairs"
+    "item": "oreganized:glance_stairs",
+    "count": 4
   }
 }

@@ -1,46 +1,46 @@
 {
   "parent": "minecraft:story/upgrade_tools",
+  "display": {
+    "icon": {
+      "item": "oreganized:lead_ingot"
+    },
+    "title": {
+      "text": "advancements.story.eat_with_lead.title"
+    },
+    "description": {
+      "text": "advancements.story.eat_with_lead.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
   "criteria": {
-    "eaten": {
+    "stunned": {
+      "trigger": "minecraft:effects_changed",
       "conditions": {
-        "item": {
-          "tag": "oreganized:consumable"
+        "effects": {
+          "oreganized:stunning": {}
         }
-      },
-      "trigger": "minecraft:consume_item"
+      }
     },
     "has_lead": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "forge:ingots/lead"
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
     },
-    "stunned": {
+    "eaten": {
+      "trigger": "minecraft:consume_item",
       "conditions": {
-        "effects": {
-          "oreganized:stunning": {}
+        "item": {
+          "tag": "oreganized:consumable"
         }
-      },
-      "trigger": "minecraft:effects_changed"
-    }
-  },
-  "display": {
-    "announce_to_chat": true,
-    "description": {
-      "translate": "advancements.story.eat_with_lead.description"
-    },
-    "frame": "task",
-    "hidden": false,
-    "icon": {
-      "item": "oreganized:lead_ingot"
-    },
-    "show_toast": true,
-    "title": {
-      "translate": "advancements.story.eat_with_lead.title"
+      }
     }
   },
   "requirements": [

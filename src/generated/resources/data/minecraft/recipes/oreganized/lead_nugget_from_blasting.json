@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "oreganized:bush_hammer"
+  },
+  "result": "oreganized:lead_nugget",
+  "experience": 0.1,
+  "cookingtime": 100
+}

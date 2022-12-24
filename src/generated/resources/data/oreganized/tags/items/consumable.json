@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "minecraft:apple",
     "minecraft:mushroom_stew",
@@ -114,24 +115,13 @@
     "farmersdelight:honey_glazed_ham",
     "farmersdelight:shepherds_pie",
     "farmersdelight:dog_food",
-    "nethersdelight:hoglin_loin",
-    "nethersdelight:hoglin_sirloin",
-    "nethersdelight:strider_slice",
-    "nethersdelight:ground_strider",
-    "nethersdelight:hoglin_ear",
-    "nethersdelight:warped_moldy_meat",
-    "nethersdelight:grilled_strider",
-    "nethersdelight:strider_moss_stew",
-    "nethersdelight:plate_of_stuffed_hoglin_snout",
-    "nethersdelight:plate_of_stuffed_hoglin_ham",
-    "nethersdelight:plate_of_stuffed_hoglin_roast",
-    "nethersdelight:propelpearl",
-    "nethersdelight:nether_skewer",
-    "nethersdelight:magma_gelatin",
     "create:bar_of_chocolate",
     "create:sweet_roll",
     "create:chocolate_glazed_berries",
     "create:honeyed_apple",
+    "quark:frog_leg",
+    "quark:cooked_frog_leg",
+    "quark:golden_frog_leg",
     "quark:crab_leg",
     "quark:cooked_crab_leg"
   ]

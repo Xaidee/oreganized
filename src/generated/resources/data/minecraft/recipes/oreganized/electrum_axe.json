@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:diamond_axe"
+  },
+  "addition": {
+    "tag": "forge:ingots/electrum"
+  },
+  "result": {
+    "item": "oreganized:electrum_axe"
+  }
+}

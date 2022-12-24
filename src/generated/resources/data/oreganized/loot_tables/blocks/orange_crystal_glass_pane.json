@@ -2,7 +2,14 @@
   "type": "minecraft:block",
   "pools": [
     {
+      "rolls": 1.0,
       "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "oreganized:orange_crystal_glass_pane"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -17,14 +24,7 @@
             ]
           }
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "oreganized:orange_crystal_glass_pane"
-        }
-      ],
-      "rolls": 1.0
+      ]
     }
   ]
 }

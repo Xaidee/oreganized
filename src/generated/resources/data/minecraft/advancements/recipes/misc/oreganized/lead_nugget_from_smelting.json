@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:oreganized/lead_nugget_from_smelting"
+    ]
+  },
+  "criteria": {
+    "has_bush_hammer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreganized:bush_hammer"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:oreganized/lead_nugget_from_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bush_hammer",
+      "has_the_recipe"
+    ]
+  ]
+}

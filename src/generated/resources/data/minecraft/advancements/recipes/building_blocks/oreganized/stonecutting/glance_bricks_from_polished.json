@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:oreganized/stonecutting/glance_bricks_from_polished"
+    ]
+  },
+  "criteria": {
+    "has_polished_glance": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreganized:polished_glance"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:oreganized/stonecutting/glance_bricks_from_polished"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_glance",
+      "has_the_recipe"
+    ]
+  ]
+}

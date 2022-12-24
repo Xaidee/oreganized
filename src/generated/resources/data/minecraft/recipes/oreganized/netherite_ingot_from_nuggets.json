@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "oreganized:netherite_nugget"
+    }
+  },
+  "result": {
+    "item": "minecraft:netherite_ingot"
+  }
+}

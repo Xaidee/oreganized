@@ -1,5 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AB",
+    "BA"
+  ],
   "key": {
     "A": {
       "tag": "forge:ingots/lead"
@@ -8,10 +12,6 @@
       "item": "minecraft:cobblestone"
     }
   },
-  "pattern": [
-    "AB",
-    "BA"
-  ],
   "result": {
     "item": "oreganized:glance"
   }

@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "#forge:raw_materials/silver",
     "#forge:raw_materials/lead"

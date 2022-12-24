@@ -1,7 +1,24 @@
 {
   "parent": "oreganized:story/obtain_silver",
+  "display": {
+    "icon": {
+      "item": "oreganized:electrum_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "text": "advancements.story.electrum_gear.title"
+    },
+    "description": {
+      "text": "advancements.story.electrum_gear.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
   "criteria": {
     "has_all_electrum_armor": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -25,24 +42,7 @@
             ]
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    }
-  },
-  "display": {
-    "announce_to_chat": true,
-    "description": {
-      "translate": "advancements.story.electrum_gear.description"
-    },
-    "frame": "challenge",
-    "hidden": false,
-    "icon": {
-      "item": "oreganized:electrum_chestplate",
-      "nbt": "{Damage:0}"
-    },
-    "show_toast": true,
-    "title": {
-      "translate": "advancements.story.electrum_gear.title"
+      }
     }
   },
   "requirements": [

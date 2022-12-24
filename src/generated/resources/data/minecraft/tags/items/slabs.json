@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "oreganized:glance_slab",
     "oreganized:glance_brick_slab"

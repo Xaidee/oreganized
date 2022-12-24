@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "oreganized:polished_glance"
+  },
+  "result": "oreganized:glance_brick_slab",
+  "count": 2
+}

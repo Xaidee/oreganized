@@ -1,30 +1,30 @@
 {
   "parent": "minecraft:story/iron_tools",
+  "display": {
+    "icon": {
+      "item": "oreganized:silver_ingot"
+    },
+    "title": {
+      "text": "advancements.story.obtain_silver.title"
+    },
+    "description": {
+      "text": "advancements.story.obtain_silver.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
   "criteria": {
     "has_silver_ingot": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "forge:ingots/silver"
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    }
-  },
-  "display": {
-    "announce_to_chat": true,
-    "description": {
-      "translate": "advancements.story.obtain_silver.description"
-    },
-    "frame": "task",
-    "hidden": false,
-    "icon": {
-      "item": "oreganized:silver_ingot"
-    },
-    "show_toast": true,
-    "title": {
-      "translate": "advancements.story.obtain_silver.title"
+      }
     }
   },
   "requirements": [

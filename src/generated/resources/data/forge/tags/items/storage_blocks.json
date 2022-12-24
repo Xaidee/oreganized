@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "#forge:storage_blocks/silver",
     "#forge:storage_blocks/lead",

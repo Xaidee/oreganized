@@ -8,7 +8,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class MMCompatRegistry {
 
-    public static final RegistryObject<Item> LEAD_PLATING = OItems.ITEMS.register("lead_plating", () -> new OItem(CreativeModeTab.TAB_MISC));
+    /*public static final RegistryObject<Item> LEAD_PLATING = OItems.ITEMS.register("lead_plating", () -> new OItem(CreativeModeTab.TAB_MISC));
     public static final RegistryObject<Item> SILVER_PLATING = OItems.ITEMS.register("silver_plating", () -> new OItem(CreativeModeTab.TAB_MISC));
     public static final RegistryObject<Item> ELECTRUM_PLATING = OItems.ITEMS.register("electrum_plating", () -> new OItem(CreativeModeTab.TAB_MISC));
 
@@ -18,7 +18,7 @@ public class MMCompatRegistry {
 
     public static final RegistryObject<Item> LEAD_DUST = OItems.ITEMS.register("lead_dust", () -> new OItem(CreativeModeTab.TAB_MISC));
     public static final RegistryObject<Item> SILVER_DUST = OItems.ITEMS.register("silver_dust", () -> new OItem(CreativeModeTab.TAB_MISC));
-
+*/
     public static void register() {
 
     }

@@ -1,31 +1,36 @@
 {
   "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "oreganized:brown_crystal_glass"
+    ]
+  },
   "criteria": {
-    "has_any_glass": {
-      "conditions": {
-        "items": [
-          {
-            "tag": "forge:glass"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_lead_ingot": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "forge:ingots/lead"
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "has_any_glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:glass"
+          }
+        ]
+      }
     },
     "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "oreganized:brown_crystal_glass"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      }
     }
   },
   "requirements": [
@@ -34,10 +39,5 @@
       "has_any_glass",
       "has_the_recipe"
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "oreganized:brown_crystal_glass"
-    ]
-  }
+  ]
 }

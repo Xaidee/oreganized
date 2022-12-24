@@ -41,14 +41,14 @@ public class OItemModels extends OItemModelProvider {
         normalItem(OItems.ELECTRUM_LEGGINGS);
         normalItem(OItems.ELECTRUM_BOOTS);
         normalItem(OItems.SHRAPNEL_BOMB_MINECART);
-        normalItem(MMCompatRegistry.LEAD_PLATING);
+        /*normalItem(MMCompatRegistry.LEAD_PLATING);
         normalItem(MMCompatRegistry.SILVER_PLATING);
         normalItem(MMCompatRegistry.ELECTRUM_PLATING);
         normalItem(MMCompatRegistry.LEAD_PIECE);
         normalItem(MMCompatRegistry.SILVER_PIECE);
         normalItem(MMCompatRegistry.ELECTRUM_PIECE);
         normalItem(MMCompatRegistry.LEAD_DUST);
-        normalItem(MMCompatRegistry.SILVER_DUST);
+        normalItem(MMCompatRegistry.SILVER_DUST);*/
 
         toolItem(OItems.BUSH_HAMMER);
         toolItem(OItems.ELECTRUM_SWORD);

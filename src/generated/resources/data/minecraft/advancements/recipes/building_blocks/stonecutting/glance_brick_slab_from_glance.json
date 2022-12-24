@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:stonecutting/glance_brick_slab_from_glance"
+    ]
+  },
   "criteria": {
-    "has_oreganized:glance": {
+    "has_glance": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -10,25 +16,19 @@
             ]
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
     },
     "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "minecraft:stonecutting/glance_brick_slab_from_glance"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      }
     }
   },
   "requirements": [
     [
-      "has_oreganized:glance",
+      "has_glance",
       "has_the_recipe"
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "minecraft:stonecutting/glance_brick_slab_from_glance"
-    ]
-  }
+  ]
 }

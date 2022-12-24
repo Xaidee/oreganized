@@ -1,7 +1,40 @@
 {
   "parent": "oreganized:story/melting_point",
+  "display": {
+    "icon": {
+      "item": "oreganized:music_disc_structure"
+    },
+    "title": {
+      "text": "advancements.story.disc_smith.title"
+    },
+    "description": {
+      "text": "advancements.story.disc_smith.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
   "criteria": {
+    "use_disc_on_lead_cauldron": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": [
+              "oreganized:molten_lead_cauldron"
+            ]
+          }
+        },
+        "item": {
+          "items": [
+            "minecraft:music_disc_11"
+          ]
+        }
+      }
+    },
     "has_structure_disc": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
@@ -10,40 +43,7 @@
             ]
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "use_disc_on_lead_cauldron": {
-      "conditions": {
-        "item": {
-          "items": [
-            "minecraft:music_disc_11"
-          ]
-        },
-        "location": {
-          "block": {
-            "blocks": [
-              "oreganized:molten_lead_cauldron"
-            ]
-          }
-        }
-      },
-      "trigger": "minecraft:item_used_on_block"
-    }
-  },
-  "display": {
-    "announce_to_chat": true,
-    "description": {
-      "translate": "advancements.story.disc_smith.description"
-    },
-    "frame": "task",
-    "hidden": false,
-    "icon": {
-      "item": "oreganized:music_disc_structure"
-    },
-    "show_toast": true,
-    "title": {
-      "translate": "advancements.story.disc_smith.title"
+      }
     }
   },
   "requirements": [

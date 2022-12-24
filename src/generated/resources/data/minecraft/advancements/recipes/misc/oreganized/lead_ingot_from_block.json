@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:oreganized/lead_ingot_from_block"
+    ]
+  },
+  "criteria": {
+    "has_lead_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "oreganized:lead_block"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:oreganized/lead_ingot_from_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lead_block",
+      "has_the_recipe"
+    ]
+  ]
+}

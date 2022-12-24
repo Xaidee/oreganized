@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "#forge:ores/silver",
     "#forge:ores/lead"

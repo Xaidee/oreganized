@@ -1,4 +1,5 @@
 {
+  "replace": false,
   "values": [
     "#oreganized:rich_in_lead_ore",
     "#forge:is_plains"

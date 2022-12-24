@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "A": {
-      "item": "oreganized:glance_bricks"
-    }
-  },
   "pattern": [
     "A  ",
     "AA ",
     "AAA"
   ],
+  "key": {
+    "A": {
+      "item": "oreganized:glance_bricks"
+    }
+  },
   "result": {
-    "count": 4,
-    "item": "oreganized:glance_brick_stairs"
+    "item": "oreganized:glance_brick_stairs",
+    "count": 4
   }
 }

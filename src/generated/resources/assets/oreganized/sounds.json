@@ -1,16 +1,16 @@
 {
-  "entity.shrapnel_bomb.primed": {
-    "sounds": [
-      "random/fuse"
-    ],
-    "subtitle": "subtitles.entity.shrapnel_bomb.primed"
-  },
   "music.disc.structure": {
     "sounds": [
       {
         "name": "oreganized:music/disc/structure",
         "stream": true
       }
+    ]
+  },
+  "entity.shrapnel_bomb.primed": {
+    "subtitle": "subtitles.entity.shrapnel_bomb.primed",
+    "sounds": [
+      "random/fuse"
     ]
   }
 }

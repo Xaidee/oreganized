@@ -1,31 +1,36 @@
 {
   "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "oreganized:electrum_ingot"
+    ]
+  },
   "criteria": {
     "has_gold_ingot": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "forge:ingots/gold"
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
     },
     "has_silver_ingot": {
+      "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "tag": "forge:ingots/silver"
           }
         ]
-      },
-      "trigger": "minecraft:inventory_changed"
+      }
     },
     "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
       "conditions": {
         "recipe": "oreganized:electrum_ingot"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      }
     }
   },
   "requirements": [
@@ -34,10 +39,5 @@
       "has_silver_ingot",
       "has_the_recipe"
     ]
-  ],
-  "rewards": {
-    "recipes": [
-      "oreganized:electrum_ingot"
-    ]
-  }
+  ]
 }

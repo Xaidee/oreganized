@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#oreganized:rich_in_lead_ore",
-  "features": "oreganized:lead_ore_extra",
-  "step": "underground_ores"
-}
