@@ -119,10 +119,12 @@
     "create:sweet_roll",
     "create:chocolate_glazed_berries",
     "create:honeyed_apple",
+    "supplementaries:candy",
+    "supplementaries:soap",
+    "quark:crab_leg",
+    "quark:cooked_crab_leg",
     "quark:frog_leg",
     "quark:cooked_frog_leg",
-    "quark:golden_frog_leg",
-    "quark:crab_leg",
-    "quark:cooked_crab_leg"
+    "quark:golden_frog_leg"
   ]
 }

@@ -4,6 +4,12 @@ import galena.oreganized.Oreganized;
 import galena.oreganized.data.provider.OLangProvider;
 import galena.oreganized.index.*;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
+
+import java.util.function.Supplier;
 
 public class OLang extends OLangProvider {
 
@@ -52,14 +58,17 @@ public class OLang extends OLangProvider {
             This must be at the very bottom to avoid overwriting errors. These functions ignore objects
             that have already been translated above.
          */
-        for (int i = 0; OBlocks.BLOCKS.getEntries().size() > i; i++) {
-            tryBlock(OBlocks.BLOCKS.getEntries().stream().toList().get(i));
+        for (Supplier<? extends Block> blocks : OBlocks.BLOCKS.getEntries()) {
+            tryBlock(blocks);
         }
         for (int i = 0; OItems.ITEMS.getEntries().size() > i; i++) {
             tryItem(OItems.ITEMS.getEntries().stream().toList().get(i));
         }
-        for (int i = 0; OEntityTypes.ENTITIES.getEntries().size() > i; i++) {
-            tryEntity(OEntityTypes.ENTITIES.getEntries().stream().toList().get(i));
+        for (Supplier<Fluid> fluids : OFluids.FLUIDS.getEntries()) {
+            tryFluid(fluids);
+        }
+        for (Supplier<EntityType<?>> entities : OEntityTypes.ENTITIES.getEntries()) {
+            tryEntity(entities);
         }
     }
 }

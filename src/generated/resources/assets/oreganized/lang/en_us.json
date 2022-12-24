@@ -88,6 +88,7 @@
   "effect.oreganized.stunning.description": "Paralyzes the victim periodically with random intervals",
   "entity.oreganized.shrapnel_bomb": "Shrapnel Bomb",
   "entity.oreganized.shrapnel_bomb_minecart": "Shrapnel Bomb Minecart",
+  "fluid.oreganized.molten_lead": "Molten Lead",
   "item.minecraft.lingering_potion.effect.stunning": "Lingering Potion of Stunning",
   "item.minecraft.potion.effect.stunning": "Potion of Stunning",
   "item.minecraft.splash_potion.effect.stunning": "Splash Potion of Stunning",

@@ -2,6 +2,7 @@ package galena.oreganized.data.provider;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import net.minecraft.Util;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.text.translate.JavaUnicodeEscaper;
 
@@ -171,6 +173,12 @@ public abstract class OLangProvider implements DataProvider {
     public void tryItem(Supplier<? extends Item> item) {
         String key = item.get().getDescriptionId();
         String value = formatString(ForgeRegistries.ITEMS.getKey(item.get()).getPath());
+        data.putIfAbsent(key, value);
+    }
+
+    public void tryFluid(Supplier<? extends Fluid> fluid) {
+        String key = Util.makeDescriptionId("fluid", ForgeRegistries.FLUIDS.getKey(fluid.get()));
+        String value = formatString(ForgeRegistries.FLUIDS.getKey(fluid.get()).getPath());
         data.putIfAbsent(key, value);
     }
 
