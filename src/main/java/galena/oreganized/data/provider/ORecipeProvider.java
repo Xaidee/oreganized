@@ -96,7 +96,7 @@ public class ORecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder crystalGlass(Supplier<? extends Block> blockOut, Block blockIn) {
-        return ShapedRecipeBuilder.shaped(blockOut.get())
+        return ShapedRecipeBuilder.shaped(blockOut.get(), 8)
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
