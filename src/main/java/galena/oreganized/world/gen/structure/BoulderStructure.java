@@ -18,7 +18,7 @@ public class BoulderStructure extends StructureFeature<JigsawConfiguration> {
             PieceGeneratorSupplier.Context<JigsawConfiguration> boulderContext = new PieceGeneratorSupplier.Context<>(context.chunkGenerator(), context.biomeSource(), context.seed(), context.chunkPos(), boulderConfig, context.heightAccessor(), context.validBiome(), context.structureManager(), context.registryAccess());
             BlockPos boulderPos = context.chunkPos().getMiddleBlockPosition(0);
             int topLandY = context.chunkGenerator().getFirstFreeHeight(boulderPos.getX(), boulderPos.getZ(), Heightmap.Types.WORLD_SURFACE_WG, context.heightAccessor());
-            boulderPos = boulderPos.above(topLandY - 7);
+            boulderPos = boulderPos.above(topLandY - 4);
             return JigsawPlacement.addPieces(boulderContext, PoolElementStructurePiece::new, boulderPos, true, false);
         });
     }
