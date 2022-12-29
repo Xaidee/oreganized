@@ -37,7 +37,6 @@ minecraft {
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Client'
             args "-mixin.config=${mod_id}.mixins.json"
-            args "-mixin.config=galenacapes.forge.mixins.json"
             mods {
                 modClientRun {
                     source sourceSets.main
