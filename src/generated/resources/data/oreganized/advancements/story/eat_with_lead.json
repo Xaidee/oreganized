@@ -5,10 +5,10 @@
       "item": "oreganized:lead_ingot"
     },
     "title": {
-      "text": "advancements.story.eat_with_lead.title"
+      "translate": "advancements.story.eat_with_lead.title"
     },
     "description": {
-      "text": "advancements.story.eat_with_lead.description"
+      "translate": "advancements.story.eat_with_lead.description"
     },
     "frame": "task",
     "show_toast": true,

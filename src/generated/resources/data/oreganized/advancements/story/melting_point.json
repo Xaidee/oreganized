@@ -5,10 +5,10 @@
       "item": "oreganized:molten_lead_bucket"
     },
     "title": {
-      "text": "advancements.story.melting_point.title"
+      "translate": "advancements.story.melting_point.title"
     },
     "description": {
-      "text": "advancements.story.melting_point.description"
+      "translate": "advancements.story.melting_point.description"
     },
     "frame": "task",
     "show_toast": true,

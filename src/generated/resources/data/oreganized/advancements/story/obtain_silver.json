@@ -5,10 +5,10 @@
       "item": "oreganized:silver_ingot"
     },
     "title": {
-      "text": "advancements.story.obtain_silver.title"
+      "translate": "advancements.story.obtain_silver.title"
     },
     "description": {
-      "text": "advancements.story.obtain_silver.description"
+      "translate": "advancements.story.obtain_silver.description"
     },
     "frame": "task",
     "show_toast": true,

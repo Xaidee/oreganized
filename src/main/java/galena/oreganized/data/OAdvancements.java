@@ -10,6 +10,7 @@ import net.minecraft.advancements.critereon.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -41,8 +42,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:adventure/root"))
                     .display(
                             OItems.SILVER_MIRROR.get(),
-                            Component.nullToEmpty("advancements.adventure.mirror_mirror.title"),
-                            Component.nullToEmpty("advancements.adventure.mirror_mirror.description"),
+                            new TranslatableComponent("advancements.adventure.mirror_mirror.title"),
+                            new TranslatableComponent("advancements.adventure.mirror_mirror.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -56,8 +57,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:story/upgrade_tools"))
                     .display(
                             OItems.LEAD_INGOT.get(),
-                            Component.nullToEmpty("advancements.story.eat_with_lead.title"),
-                            Component.nullToEmpty("advancements.story.eat_with_lead.description"),
+                            new TranslatableComponent("advancements.story.eat_with_lead.title"),
+                            new TranslatableComponent("advancements.story.eat_with_lead.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -73,8 +74,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:story/iron_tools"))
                     .display(
                             OItems.SILVER_INGOT.get(),
-                            Component.nullToEmpty("advancements.story.obtain_silver.title"),
-                            Component.nullToEmpty("advancements.story.obtain_silver.description"),
+                            new TranslatableComponent("advancements.story.obtain_silver.title"),
+                            new TranslatableComponent("advancements.story.obtain_silver.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -88,8 +89,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(obtain_silver)
                     .display(
                             OItems.ELECTRUM_CHESTPLATE.get(),
-                            Component.nullToEmpty("advancements.story.electrum_gear.title"),
-                            Component.nullToEmpty("advancements.story.electrum_gear.description"),
+                            new TranslatableComponent("advancements.story.electrum_gear.title"),
+                            new TranslatableComponent("advancements.story.electrum_gear.description"),
                             null,
                             FrameType.CHALLENGE,
                             true,
@@ -105,8 +106,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(getAdv("minecraft:story/upgrade_tools"))
                     .display(
                             OItems.MOLTEN_LEAD_BUCKET.get(),
-                            Component.nullToEmpty("advancements.story.melting_point.title"),
-                            Component.nullToEmpty("advancements.story.melting_point.description"),
+                            new TranslatableComponent("advancements.story.melting_point.title"),
+                            new TranslatableComponent("advancements.story.melting_point.description"),
                             null,
                             FrameType.TASK,
                             true,
@@ -121,8 +122,8 @@ public class OAdvancements extends AdvancementProvider {
                     .parent(melting_point)
                     .display(
                             OItems.MUSIC_DISC_STRUCTURE.get(),
-                            Component.nullToEmpty("advancements.story.disc_smith.title"),
-                            Component.nullToEmpty("advancements.story.disc_smith.description"),
+                            new TranslatableComponent("advancements.story.disc_smith.title"),
+                            new TranslatableComponent("advancements.story.disc_smith.description"),
                             null,
                             FrameType.TASK,
                             true,

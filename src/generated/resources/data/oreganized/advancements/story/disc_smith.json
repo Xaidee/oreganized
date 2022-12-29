@@ -5,10 +5,10 @@
       "item": "oreganized:music_disc_structure"
     },
     "title": {
-      "text": "advancements.story.disc_smith.title"
+      "translate": "advancements.story.disc_smith.title"
     },
     "description": {
-      "text": "advancements.story.disc_smith.description"
+      "translate": "advancements.story.disc_smith.description"
     },
     "frame": "task",
     "show_toast": true,

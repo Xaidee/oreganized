@@ -5,10 +5,10 @@
       "item": "oreganized:silver_mirror"
     },
     "title": {
-      "text": "advancements.adventure.mirror_mirror.title"
+      "translate": "advancements.adventure.mirror_mirror.title"
     },
     "description": {
-      "text": "advancements.adventure.mirror_mirror.description"
+      "translate": "advancements.adventure.mirror_mirror.description"
     },
     "frame": "task",
     "show_toast": true,

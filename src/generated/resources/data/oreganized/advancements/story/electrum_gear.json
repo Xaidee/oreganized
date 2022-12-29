@@ -6,10 +6,10 @@
       "nbt": "{Damage:0}"
     },
     "title": {
-      "text": "advancements.story.electrum_gear.title"
+      "translate": "advancements.story.electrum_gear.title"
     },
     "description": {
-      "text": "advancements.story.electrum_gear.description"
+      "translate": "advancements.story.electrum_gear.description"
     },
     "frame": "challenge",
     "show_toast": true,
