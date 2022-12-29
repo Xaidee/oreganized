@@ -38,16 +38,16 @@ public class OFeatures {
         List<OreConfiguration.TargetBlockState> leadOre = List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, OBlocks.LEAD_ORE.get().defaultBlockState()),
                 OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, OBlocks.DEEPSLATE_LEAD_ORE.get().defaultBlockState()));
 
-        SILVER_ORE_LOW = registerPlacedOreFeature("silver_ore", new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(silverOre, 2)),
+        SILVER_ORE_LOW = registerPlacedOreFeature("silver_ore", new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(silverOre, 3, 0.6F)),
                 CountPlacement.of(2),
                 InSquarePlacement.spread(),
                 BiomeFilter.biome(),
                 HeightRangePlacement.triangle(VerticalAnchor.absolute(-15), VerticalAnchor.absolute(5)));
-        SILVER_ORE_HIGH = registerPlacedOreFeature("silver_ore_high", new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(silverOre, 1)),
-                CountPlacement.of(1),
+        SILVER_ORE_HIGH = registerPlacedOreFeature("silver_ore_high", new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(silverOre, 2, 0.8F)),
+                CountPlacement.of(2),
                 InSquarePlacement.spread(),
                 BiomeFilter.biome(),
-                HeightRangePlacement.triangle(VerticalAnchor.absolute(140), VerticalAnchor.absolute(160)));
+                HeightRangePlacement.uniform(VerticalAnchor.absolute(140), VerticalAnchor.absolute(160)));
         LEAD_ORE = registerPlacedOreFeature("lead_ore", new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(leadOre, 8)),
                 CountPlacement.of(10),
                 InSquarePlacement.spread(),
