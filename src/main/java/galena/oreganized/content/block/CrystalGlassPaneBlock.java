@@ -6,25 +6,18 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.StainedGlassPaneBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 
 import javax.annotation.Nullable;
 
-public class CrystalGlassPaneBlock extends IronBarsBlock implements ICrystalGlass {
-
-    private final DyeColor color;
+public class CrystalGlassPaneBlock extends StainedGlassPaneBlock implements ICrystalGlass {
 
     public CrystalGlassPaneBlock(DyeColor color, BlockBehaviour.Properties properties) {
-        super(properties);
-        this.color = color;
+        super(color, properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(NORTH, Boolean.FALSE).setValue(EAST, Boolean.FALSE).setValue(SOUTH, Boolean.FALSE).setValue(WEST, Boolean.FALSE).setValue(WATERLOGGED, Boolean.FALSE));
-    }
-
-    public DyeColor getColor() {
-        return this.color;
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
@@ -36,7 +29,7 @@ public class CrystalGlassPaneBlock extends IronBarsBlock implements ICrystalGlas
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         boolean flag = context.getPlayer() != null;
-        return this.defaultBlockState().setValue(TYPE, flag && context.getPlayer().isCrouching() ? ROTATED : NORMAL);
+        return super.getStateForPlacement(context).setValue(TYPE, flag && context.getPlayer().isCrouching() ? ROTATED : NORMAL);
     }
 
     @Override
