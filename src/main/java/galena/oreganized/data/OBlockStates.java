@@ -45,6 +45,8 @@ public class OBlockStates extends OBlockStateProvider {
         simpleBlock(OBlocks.ELECTRUM_BLOCK);
         simpleBlock(OBlocks.SHRAPNEL_BOMB.get(), cubeBottomTop(OBlocks.SHRAPNEL_BOMB));
 
+        axisBlock(OBlocks.CUT_LEAD);
+
         waxedBlock(OBlocks.WAXED_WHITE_CONCRETE_POWDER, Blocks.WHITE_CONCRETE_POWDER);
         waxedBlock(OBlocks.WAXED_ORANGE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER);
         waxedBlock(OBlocks.WAXED_MAGENTA_CONCRETE_POWDER, Blocks.MAGENTA_CONCRETE_POWDER);

@@ -1,4 +1,4 @@
-// 1.19.2	2022-11-28T19:10:55.527702069	Oreganized Loot Tables
+// 1.19.2	2022-12-30T13:05:23.892195448	Oreganized Loot Tables
 0cfa73831c075466c39360be7ce4755e59a5f8da data/oreganized/loot_tables/blocks/black_crystal_glass.json
 71d8ec7dc9eb667593d9f684600abd9f6d1f5bd6 data/oreganized/loot_tables/blocks/black_crystal_glass_pane.json
 03c4dbd47ced3a72deb8b79f023e191962ca002b data/oreganized/loot_tables/blocks/blue_crystal_glass.json
@@ -6,6 +6,7 @@
 f50645a8ac3bdc26948caefe1360d10fbbd7ca90 data/oreganized/loot_tables/blocks/brown_crystal_glass.json
 6f636d3a0d77804e7f980cd5d02215fc29e04b0e data/oreganized/loot_tables/blocks/brown_crystal_glass_pane.json
 1a097242aa61b09f7fa35c1e51cb2367a6881e04 data/oreganized/loot_tables/blocks/chiseled_glance.json
+57cdd0e96d53b424114454090831a8802e38a770 data/oreganized/loot_tables/blocks/cut_lead.json
 c15ec9ae111f398a123be3f21d72f0ff45a89f8f data/oreganized/loot_tables/blocks/cyan_crystal_glass.json
 0a16e5eb3fb00a6fbffced7a4ab91aaa04b5cd5a data/oreganized/loot_tables/blocks/cyan_crystal_glass_pane.json
 6ddfe1717b319ae9e322e7dc29b081b86370e44a data/oreganized/loot_tables/blocks/deepslate_lead_ore.json

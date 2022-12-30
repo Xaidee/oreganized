@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "oreganized:block/cut_lead_end",
+    "side": "oreganized:block/cut_lead_side"
+  }
+}

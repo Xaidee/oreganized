@@ -43,6 +43,8 @@ public class ORecipes extends ORecipeProvider {
         quadTransform(OBlocks.POLISHED_GLANCE, OBlocks.GLANCE).save(consumer);
         quadTransform(OBlocks.GLANCE_BRICKS, OBlocks.POLISHED_GLANCE).save(consumer);
 
+        quadTransform(OBlocks.CUT_LEAD, OBlocks.LEAD_BLOCK).save(consumer);
+
         compact(OBlocks.SILVER_BLOCK.get().asItem(), OItems.SILVER_INGOT.get()).save(consumer);
         compact(OBlocks.LEAD_BLOCK.get().asItem(), OItems.LEAD_INGOT.get()).save(consumer);
         compact(OBlocks.ELECTRUM_BLOCK.get().asItem(), OItems.ELECTRUM_INGOT.get()).save(consumer);
@@ -88,6 +90,8 @@ public class ORecipes extends ORecipeProvider {
         stonecutting(OBlocks.POLISHED_GLANCE, OBlocks.GLANCE_BRICK_STAIRS.get()).save(consumer, Oreganized.modLoc( "stonecutting/glance_brick_stairs_from_polished"));
         stonecutting(OBlocks.POLISHED_GLANCE, OBlocks.GLANCE_BRICK_SLAB.get(), 2).save(consumer, Oreganized.modLoc( "stonecutting/glance_brick_slab_from_polished"));
         stonecutting(OBlocks.POLISHED_GLANCE, OBlocks.GLANCE_BRICK_WALL.get()).save(consumer, Oreganized.modLoc( "stonecutting/glance_brick_wall_from_polished"));
+
+        stonecutting(OBlocks.LEAD_BLOCK, OBlocks.CUT_LEAD.get()).save(consumer, Oreganized.modLoc("stonecutting/cut_lead"));
 
         makeWaxed(OBlocks.WAXED_SPOTTED_GLANCE, OBlocks.SPOTTED_GLANCE).save(consumer);
 

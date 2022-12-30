@@ -74,6 +74,7 @@ public class OItemModels extends OItemModelProvider {
         block(OBlocks.ELECTRUM_BLOCK);
         block(OBlocks.EXPOSER, "exposer_level_0_south");
         block(OBlocks.SHRAPNEL_BOMB);
+        block(OBlocks.CUT_LEAD);
 
         block(OBlocks.WHITE_CRYSTAL_GLASS);
         blockFlat(OBlocks.WHITE_CRYSTAL_GLASS_PANE, OBlocks.WHITE_CRYSTAL_GLASS);

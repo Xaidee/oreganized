@@ -66,6 +66,9 @@ public class OBlocks {
     public static final RegistryObject<Block> EXPOSER = register("exposer", () -> new ExposerBlock(BlockBehaviour.Properties.copy(Blocks.OBSERVER).randomTicks()), Items.OBSERVER);
     public static final RegistryObject<Block> SHRAPNEL_BOMB = register("shrapnel_bomb", () -> new ShrapnelBombBlock(BlockBehaviour.Properties.copy(Blocks.TNT)), Items.TNT);
 
+    // Deco blocks
+    public static final RegistryObject<Block> CUT_LEAD = register("cut_lead", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(LEAD_BLOCK.get())), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
     // Crystal Glass
     public static final RegistryObject<Block> WHITE_CRYSTAL_GLASS = register("white_crystal_glass", () -> new CrystalGlassBlock(DyeColor.WHITE, BlockBehaviour.Properties.copy(Blocks.WHITE_STAINED_GLASS)), Items.BLACK_STAINED_GLASS);
     public static final RegistryObject<Block> ORANGE_CRYSTAL_GLASS = register("orange_crystal_glass", () -> new CrystalGlassBlock(DyeColor.ORANGE, BlockBehaviour.Properties.copy(Blocks.ORANGE_STAINED_GLASS)), WHITE_CRYSTAL_GLASS);

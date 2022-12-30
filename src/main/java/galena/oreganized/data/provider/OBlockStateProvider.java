@@ -79,6 +79,10 @@ public abstract class OBlockStateProvider extends BlockStateProvider {
         return model;
     }
 
+    public void axisBlock(Supplier<? extends Block> block) {
+        axisBlock((RotatedPillarBlock)block.get());
+    }
+
     public ModelFile directionalBlockModel(Supplier<? extends Block> block, String name, String side, String front, String back, String top) {
         return models().withExistingParent(name, BLOCK_FOLDER + "/observer")
                 .texture("bottom", texture(back))

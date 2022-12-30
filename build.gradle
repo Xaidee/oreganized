@@ -120,8 +120,8 @@ dependencies {
     /*
         If 'Data' fails to run try comment out the below dependencies
      */
-    runtimeOnly fg.deobf("curse.maven:supplementaries-412082:4073933")
-    runtimeOnly fg.deobf("curse.maven:selene-499980:4077941")
+    //runtimeOnly fg.deobf("curse.maven:supplementaries-412082:4073933")
+    //runtimeOnly fg.deobf("curse.maven:selene-499980:4077941")
     ///
 
     /// Utilities for the development environment

@@ -98,6 +98,8 @@ public class OBlockTags extends BlockTagsProvider {
 
                 OBlocks.EXPOSER.get(),
 
+                OBlocks.CUT_LEAD.get(),
+
                 OBlocks.MOLTEN_LEAD_CAULDRON.get()
         );
         tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
