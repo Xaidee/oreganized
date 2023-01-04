@@ -13,7 +13,7 @@ public class OMusicDiscItem extends RecordItem {
     private final Item followItem;
 
     public OMusicDiscItem(int comparatorValue, Supplier<SoundEvent> soundSupplier, Properties itemProperties, int lengthInTicks, Item followItem) {
-        super(comparatorValue, soundSupplier, itemProperties.rarity(Rarity.RARE));
+        super(comparatorValue, soundSupplier, itemProperties.rarity(Rarity.RARE).stacksTo(1));
         this.followItem = followItem;
     }
 
