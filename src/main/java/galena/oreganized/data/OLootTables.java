@@ -72,8 +72,6 @@ public class OLootTables extends LootTableProvider {
             dropSelf(OBlocks.EXPOSER);
             dropSelf(OBlocks.SHRAPNEL_BOMB);
 
-            //dropOther(OBlocks.MOLTEN_LEAD_CAULDRON, CAULDRON);
-
             for (int i = 0; OBlocks.CRYSTAL_GLASS.size() > i; i++) {
                 dropAsSilk(OBlocks.CRYSTAL_GLASS.get(i));
                 dropAsSilk(OBlocks.CRYSTAL_GLASS_PANES.get(i));

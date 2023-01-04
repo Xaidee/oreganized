@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "oreganized:block/glance_pillar_top",
+    "side": "oreganized:block/glance_pillar"
+  }
+}

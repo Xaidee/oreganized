@@ -1,0 +1,8 @@
+{
+  "parent": "quark:block/vertical_slab",
+  "textures": {
+    "bottom": "oreganized:block/raw_silver_bricks",
+    "top": "oreganized:block/raw_silver_bricks",
+    "side": "oreganized:block/raw_silver_bricks"
+  }
+}

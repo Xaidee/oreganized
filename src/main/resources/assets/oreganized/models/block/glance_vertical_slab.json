@@ -1,0 +1,8 @@
+{
+  "parent": "quark:block/vertical_slab",
+  "textures": {
+    "bottom": "oreganized:block/glance",
+    "top": "oreganized:block/glance",
+    "side": "oreganized:block/glance"
+  }
+}

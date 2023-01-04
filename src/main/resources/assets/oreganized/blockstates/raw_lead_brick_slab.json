@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "oreganized:block/raw_lead_brick_slab"
+    },
+    "type=double": {
+      "model": "oreganized:block/raw_lead_bricks"
+    },
+    "type=top": {
+      "model": "oreganized:block/raw_lead_brick_slab_top"
+    }
+  }
+}
