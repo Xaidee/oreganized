@@ -7,8 +7,11 @@ import galena.oreganized.index.OEffects;
 import galena.oreganized.index.OTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.gui.ForgeIngameGui;
 
+@OnlyIn(Dist.CLIENT)
 public class OGui extends ForgeIngameGui {
 
     protected static final ResourceLocation STUNNING_LOCATION = new ResourceLocation(Oreganized.MOD_ID, "textures/misc/stunning_outline.png");
