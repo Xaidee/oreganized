@@ -104,8 +104,8 @@ dependencies {
     //runtimeOnly fg.deobf("curse.maven:modest-mining-533775:4127197")
     //runtimeOnly fg.deobf("curse.maven:geckolib-388172:4181370")
 
-    compileOnly fg.deobf("curse.maven:shield-expansion-583318:4046470")
-    runtimeOnly fg.deobf("curse.maven:shield-expansion-583318:4046470")
+    compileOnly fg.deobf("curse.maven:shield-expansion-583318:4325556")
+    runtimeOnly fg.deobf("curse.maven:shield-expansion-583318:4325556")
 
     compileOnly fg.deobf("curse.maven:create-328085:4174329")
     runtimeOnly fg.deobf("curse.maven:create-328085:4174329")
@@ -122,23 +122,23 @@ dependencies {
     /*
         If 'Data' fails to run try comment out the below dependencies
      */
-    runtimeOnly fg.deobf("curse.maven:supplementaries-412082:4216131")
-    runtimeOnly fg.deobf("curse.maven:selene-499980:3842421")
+    runtimeOnly fg.deobf("curse.maven:supplementaries-412082:4073933")
+    runtimeOnly fg.deobf("curse.maven:selene-499980:4077941")
     ///
 
     /// Utilities for the development environment
-    runtimeOnly fg.deobf("curse.maven:jade-324717:4082408")
+    runtimeOnly fg.deobf("curse.maven:jade-324717:4054920")
     // compile against the JEI API but do not include it at runtime
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     // at runtime, use the full JEI jar for Forge
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
-    runtimeOnly fg.deobf("curse.maven:catalogue-459701:3803098")
-    runtimeOnly fg.deobf("curse.maven:configured-457570:4010624")
+    runtimeOnly fg.deobf("curse.maven:catalogue-459701:3873264")
+    runtimeOnly fg.deobf("curse.maven:configured-457570:4011355")
 
-    runtimeOnly fg.deobf("curse.maven:oculus-581495:4110355")
-    runtimeOnly fg.deobf("curse.maven:rubidium-574856:4024781")
+    runtimeOnly fg.deobf("curse.maven:oculus-581495:3973908")
+    runtimeOnly fg.deobf("curse.maven:rubidium-574856:3973894")
     ///
 }
 
