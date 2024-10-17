@@ -20,6 +20,7 @@ public class OreganizedConfig {
         public final ConfigValue<Boolean> pillagerSpawnWithBolts;
         public final ConfigValue<Boolean> scribeSilkTouchStone;
         public final ConfigValue<Integer> moltenLeadDelay;
+        public final ConfigValue<Boolean> cauldronLeadMelting;
 
         private Common(ForgeConfigSpec.Builder builder) {
             builder.comment("Common");
@@ -30,6 +31,7 @@ public class OreganizedConfig {
             pillagerSpawnWithBolts = builder.comment("Pillagers have a chance to spawn with a lead bolt in their offhand").define("pillagerSpawnWithBolts", true);
             scribeSilkTouchStone = builder.comment("The scribe is able to silk-touch pickaxe-related blocks").define("scribeSilkTouchStone", true);
             moltenLeadDelay = builder.comment("Time in ticks molten lead waits until flowing downwards").defineInRange("moltenLeadDelay", 20 * 10, 0, 20 * 100);
+            cauldronLeadMelting = builder.comment("Can lead blocks be placed into a cauldron to melt?").define("cauldronLeadMelting", true);
 
             builder.pop();
         }

@@ -1,5 +1,6 @@
 package galena.oreganized.content.block;
 
+import galena.oreganized.OreganizedConfig;
 import galena.oreganized.index.OBlocks;
 import galena.oreganized.index.OItems;
 import galena.oreganized.index.OTags;
@@ -25,7 +26,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractCauldronBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CauldronBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -113,7 +113,7 @@ public class MoltenLeadCauldronBlock extends AbstractCauldronBlock implements Ca
         int age = state.getValue(AGE);
         if (age < max_age && random.nextInt(1) == 0) {
             BlockState below = world.getBlockState(pos.below());
-            if (below.is(OTags.Blocks.FIRE_SOURCE) || below.getFluidState().is(FluidTags.LAVA)) {
+            if ((below.is(OTags.Blocks.FIRE_SOURCE) || below.getFluidState().is(FluidTags.LAVA)) && OreganizedConfig.COMMON.cauldronLeadMelting.get()) {
                 world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
                 return;
             }
