@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "edge": "dye_depot:block/slate_stained_glass_pane_top",
+    "pane": "oreganized:block/slate_crystal_glass_out"
+  }
+}

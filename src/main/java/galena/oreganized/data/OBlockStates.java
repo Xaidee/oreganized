@@ -1,10 +1,10 @@
 package galena.oreganized.data;
 
 import galena.oreganized.Oreganized;
+import galena.oreganized.compat.ColorCompat;
 import galena.oreganized.data.provider.OBlockStateProvider;
 import galena.oreganized.index.OBlocks;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class OBlockStates extends OBlockStateProvider {
@@ -54,59 +54,17 @@ public class OBlockStates extends OBlockStateProvider {
         meltableTrapdoor(OBlocks.LEAD_TRAPDOOR);
         meltableBars(OBlocks.LEAD_BARS);
 
-        waxedBlock(OBlocks.WAXED_WHITE_CONCRETE_POWDER, Blocks.WHITE_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_ORANGE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_MAGENTA_CONCRETE_POWDER, Blocks.MAGENTA_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_LIGHT_BLUE_CONCRETE_POWDER, Blocks.LIGHT_BLUE_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_YELLOW_CONCRETE_POWDER, Blocks.YELLOW_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_LIME_CONCRETE_POWDER, Blocks.LIME_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_PINK_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_GRAY_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_LIGHT_GRAY_CONCRETE_POWDER, Blocks.LIGHT_GRAY_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_CYAN_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_PURPLE_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_BLUE_CONCRETE_POWDER, Blocks.BLUE_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_BROWN_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_GREEN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_RED_CONCRETE_POWDER, Blocks.RED_CONCRETE_POWDER);
-        waxedBlock(OBlocks.WAXED_BLACK_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER);
+        OBlocks.WAXED_CONCRETE_POWDER.forEach((color, block) -> {
+            var unwaxed = ColorCompat.getColoredBlock("concrete_powder", color);
+            waxedBlock(block, unwaxed);
+        });
 
         crate(OBlocks.LEAD_BOLT_CRATE);
 
         moltenCauldron(OBlocks.MOLTEN_LEAD_CAULDRON, OBlocks.LEAD_BLOCK);
 
-        crystalGlassBlock(OBlocks.WHITE_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.WHITE_CRYSTAL_GLASS_PANE, OBlocks.WHITE_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.ORANGE_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.ORANGE_CRYSTAL_GLASS_PANE, OBlocks.ORANGE_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.MAGENTA_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.MAGENTA_CRYSTAL_GLASS_PANE, OBlocks.MAGENTA_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.LIGHT_BLUE_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.LIGHT_BLUE_CRYSTAL_GLASS_PANE, OBlocks.LIGHT_BLUE_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.YELLOW_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.YELLOW_CRYSTAL_GLASS_PANE, OBlocks.YELLOW_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.LIME_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.LIME_CRYSTAL_GLASS_PANE, OBlocks.LIME_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.PINK_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.PINK_CRYSTAL_GLASS_PANE, OBlocks.PINK_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.GRAY_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.GRAY_CRYSTAL_GLASS_PANE, OBlocks.GRAY_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.LIGHT_GRAY_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.LIGHT_GRAY_CRYSTAL_GLASS_PANE, OBlocks.LIGHT_GRAY_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.CYAN_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.CYAN_CRYSTAL_GLASS_PANE, OBlocks.CYAN_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.PURPLE_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.PURPLE_CRYSTAL_GLASS_PANE, OBlocks.PURPLE_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.BLUE_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.BLUE_CRYSTAL_GLASS_PANE, OBlocks.BLUE_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.BROWN_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.BROWN_CRYSTAL_GLASS_PANE, OBlocks.BROWN_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.GREEN_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.GREEN_CRYSTAL_GLASS_PANE, OBlocks.GREEN_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.RED_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.RED_CRYSTAL_GLASS_PANE, OBlocks.RED_CRYSTAL_GLASS);
-        crystalGlassBlock(OBlocks.BLACK_CRYSTAL_GLASS);
-        crystalGlassPaneBlock(OBlocks.BLACK_CRYSTAL_GLASS_PANE, OBlocks.BLACK_CRYSTAL_GLASS);
+        OBlocks.CRYSTAL_GLASS.forEach((color, block) -> crystalGlassBlock(block));
+        OBlocks.CRYSTAL_GLASS_PANES.forEach((color, block) -> crystalGlassPaneBlock(color, block, OBlocks.CRYSTAL_GLASS.get(color)));
 
         simpleBlock(OBlocks.GROOVED_ICE);
         simpleBlock(OBlocks.GROOVED_PACKED_ICE);

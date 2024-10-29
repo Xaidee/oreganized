@@ -51,10 +51,9 @@ public class OBlockTags extends IntrinsicHolderTagsProvider<Block> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         // Oreganized
-        for (int i = 0; OBlocks.CRYSTAL_GLASS.size() > i; i++) {
-            tag(CRYSTAL_GLASS).add(OBlocks.CRYSTAL_GLASS.get(i).get());
-            tag(CRYSTAL_GLASS_PANES).add(OBlocks.CRYSTAL_GLASS_PANES.get(i).get());
-        }
+        OBlocks.CRYSTAL_GLASS.forEach((c, b) -> tag(CRYSTAL_GLASS).add(b.get()));
+        OBlocks.CRYSTAL_GLASS_PANES.forEach((c, b) -> tag(CRYSTAL_GLASS_PANES).add(b.get()));
+
         tag(FIRE_SOURCE).addTag(BlockTags.FIRE).addTag(BlockTags.CAMPFIRES);
         tag(STONE_TYPES_GLANCE).add(
                 OBlocks.POLISHED_GLANCE.get(), OBlocks.GLANCE_BRICKS.get(), OBlocks.CHISELED_GLANCE.get(),
@@ -139,24 +138,8 @@ public class OBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 OBlocks.GROOVED_PACKED_ICE.get(),
                 OBlocks.GROOVED_BLUE_ICE.get()
         );
-        tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
-                OBlocks.WAXED_WHITE_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_ORANGE_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_MAGENTA_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_LIGHT_BLUE_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_YELLOW_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_LIME_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_PINK_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_GRAY_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_LIGHT_GRAY_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_CYAN_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_PURPLE_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_BLUE_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_BROWN_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_GREEN_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_RED_CONCRETE_POWDER.get(),
-                OBlocks.WAXED_BLACK_CONCRETE_POWDER.get()
-        );
+
+        OBlocks.WAXED_CONCRETE_POWDER.forEach((c, b) -> tag(BlockTags.MINEABLE_WITH_SHOVEL).add(b.get()));
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(
                 OBlocks.LEAD_ORE.get(),

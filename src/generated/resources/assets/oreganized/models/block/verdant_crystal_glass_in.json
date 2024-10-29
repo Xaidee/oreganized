@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oreganized:block/verdant_crystal_glass_in"
+  }
+}

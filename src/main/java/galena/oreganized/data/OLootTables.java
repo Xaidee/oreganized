@@ -112,21 +112,9 @@ public class OLootTables extends LootTableProvider {
                                     LootItem.lootTableItem(OBlocks.LEAD_BARS.get())
                             )))));
 
-            //dropSelf(QCompatRegistry.GLANCE_PILLAR);
-            //slab(QCompatRegistry.RAW_LEAD_BRICK_SLAB);
-            //slab(QCompatRegistry.RAW_SILVER_BRICK_SLAB);
-            //slab(QCompatRegistry.GLANCE_VERTICAL_SLAB);
-            //slab(QCompatRegistry.POLISHED_GLANCE_VERTICAL_SLAB);
-            //slab(QCompatRegistry.GLANCE_BRICK_VERTICAL_SLAB);
-
-            for (int i = 0; OBlocks.CRYSTAL_GLASS.size() > i; i++) {
-                dropAsSilk(OBlocks.CRYSTAL_GLASS.get(i));
-                dropAsSilk(OBlocks.CRYSTAL_GLASS_PANES.get(i));
-            }
-
-            for (Supplier<? extends Block> blocks : OBlocks.WAXED_CONRETE_POWDER) {
-                dropSelf(blocks);
-            }
+            OBlocks.CRYSTAL_GLASS.forEach((c, b) -> dropAsSilk(b));
+            OBlocks.CRYSTAL_GLASS_PANES.forEach((c, b) -> dropAsSilk(b));
+            OBlocks.WAXED_CONCRETE_POWDER.forEach((c, b) -> dropSelf(b));
         }
 
         private void grooved(Supplier<Block> block, Block other) {

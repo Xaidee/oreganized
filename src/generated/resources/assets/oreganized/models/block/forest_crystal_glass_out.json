@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oreganized:block/forest_crystal_glass_out"
+  }
+}

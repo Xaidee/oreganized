@@ -2,6 +2,7 @@ package galena.oreganized.data;
 
 import com.google.common.collect.ImmutableList;
 import galena.oreganized.Oreganized;
+import galena.oreganized.compat.ColorCompat;
 import galena.oreganized.data.provider.ORecipeProvider;
 import galena.oreganized.index.OBlocks;
 import galena.oreganized.index.OItems;
@@ -15,7 +16,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import org.infernalstudios.shieldexp.init.ItemsInit;
 import umpaz.nethersdelight.common.registry.NDItems;
@@ -113,43 +113,19 @@ public class ORecipes extends ORecipeProvider {
         smithingElectrum(() -> Items.DIAMOND_LEGGINGS, OItems.ELECTRUM_LEGGINGS).save(consumer, Oreganized.modLoc("electrum_leggings"));
         smithingElectrum(() -> Items.DIAMOND_BOOTS, OItems.ELECTRUM_BOOTS).save(consumer, Oreganized.modLoc("electrum_boots"));
 
-        crystalGlass(OBlocks.BLACK_CRYSTAL_GLASS, Blocks.BLACK_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.BLUE_CRYSTAL_GLASS, Blocks.BLUE_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.BROWN_CRYSTAL_GLASS, Blocks.BROWN_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.CYAN_CRYSTAL_GLASS, Blocks.CYAN_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.GRAY_CRYSTAL_GLASS, Blocks.GRAY_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.GREEN_CRYSTAL_GLASS, Blocks.GREEN_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.LIGHT_BLUE_CRYSTAL_GLASS, Blocks.LIGHT_BLUE_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.LIGHT_GRAY_CRYSTAL_GLASS, Blocks.LIGHT_GRAY_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.LIME_CRYSTAL_GLASS, Blocks.LIME_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.MAGENTA_CRYSTAL_GLASS, Blocks.MAGENTA_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.ORANGE_CRYSTAL_GLASS, Blocks.ORANGE_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.PINK_CRYSTAL_GLASS, Blocks.PINK_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.PURPLE_CRYSTAL_GLASS, Blocks.PURPLE_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.RED_CRYSTAL_GLASS, Blocks.RED_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.WHITE_CRYSTAL_GLASS, Blocks.WHITE_STAINED_GLASS).save(consumer);
-        crystalGlass(OBlocks.YELLOW_CRYSTAL_GLASS, Blocks.YELLOW_STAINED_GLASS).save(consumer);
+        OBlocks.CRYSTAL_GLASS.forEach((color, crystalGlass) -> {
+            var glass = ColorCompat.getColoredBlock("stained_glass", color);
+            crystalGlass(crystalGlass, glass).save(consumer);
+        });
 
-        makeWaxed(OBlocks.WAXED_WHITE_CONCRETE_POWDER, Blocks.WHITE_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_ORANGE_CONCRETE_POWDER, Blocks.ORANGE_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_MAGENTA_CONCRETE_POWDER, Blocks.MAGENTA_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_LIGHT_BLUE_CONCRETE_POWDER, Blocks.LIGHT_BLUE_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_YELLOW_CONCRETE_POWDER, Blocks.YELLOW_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_LIME_CONCRETE_POWDER, Blocks.LIME_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_PINK_CONCRETE_POWDER, Blocks.PINK_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_GRAY_CONCRETE_POWDER, Blocks.GRAY_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_LIGHT_GRAY_CONCRETE_POWDER, Blocks.LIGHT_GRAY_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_CYAN_CONCRETE_POWDER, Blocks.CYAN_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_PURPLE_CONCRETE_POWDER, Blocks.PURPLE_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_BLUE_CONCRETE_POWDER, Blocks.BLUE_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_BROWN_CONCRETE_POWDER, Blocks.BROWN_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_GREEN_CONCRETE_POWDER, Blocks.GREEN_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_RED_CONCRETE_POWDER, Blocks.RED_CONCRETE_POWDER).save(consumer);
-        makeWaxed(OBlocks.WAXED_BLACK_CONCRETE_POWDER, Blocks.BLACK_CONCRETE_POWDER).save(consumer);
+        OBlocks.WAXED_CONCRETE_POWDER.forEach((color, waxed) -> {
+            var unwaxed = ColorCompat.getColoredBlock("concrete_powder", color);
+            makeWaxed(waxed, unwaxed).save(consumer);
+        });
 
-        for (int i = 0; OBlocks.CRYSTAL_GLASS_PANES.size() > i; i++) {
-            makeBars(OBlocks.CRYSTAL_GLASS_PANES.get(i), OBlocks.CRYSTAL_GLASS.get(i)).save(consumer);
-        }
+        OBlocks.CRYSTAL_GLASS_PANES.forEach((color, pane) ->
+                makeBars(pane, OBlocks.CRYSTAL_GLASS.get(color)).save(consumer)
+        );
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OBlocks.GLANCE.get(), 2)
                 .pattern("AB")
@@ -249,7 +225,7 @@ public class ORecipes extends ORecipeProvider {
                 .save(consumer, Oreganized.modLoc("poisonous_potato_from_lead"));
 
         compact(OBlocks.LEAD_BOLT_CRATE.get().asItem(), OItems.LEAD_BOLT.get()).save(consumer);
-        unCompact(OItems.LEAD_BOLT.get(), OBlocks.LEAD_BOLT_CRATE.get().asItem()).save(consumer, Oreganized.modLoc( "lead_bolt_from_crate"));
+        unCompact(OItems.LEAD_BOLT.get(), OBlocks.LEAD_BOLT_CRATE.get().asItem()).save(consumer, Oreganized.modLoc("lead_bolt_from_crate"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, OBlocks.LEAD_BULB.get(), 1)
                 .pattern(" I ")

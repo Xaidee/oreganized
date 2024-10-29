@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dye_depot:block/navy_concrete_powder"
+  }
+}

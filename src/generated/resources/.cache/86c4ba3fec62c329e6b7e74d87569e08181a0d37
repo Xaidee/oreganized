@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-20T10:43:10.6795167	Oreganized Item Tags
+// 1.20.1	2024-10-29T23:42:21.7268461	Oreganized Item Tags
 3a2cbf8d34e9bde2e22d59d4437fa80361d53291 data/farmersdelight/tags/items/tools/knives.json
 d8d286ea76e30a635512bc93d68815770003ff41 data/forge/tags/items/buckets/molten_lead.json
 7a2d68d81bc5ee59f9a2f4ba68ddb39bfd9c875d data/forge/tags/items/glass.json
@@ -44,8 +44,8 @@ bd1440ab62499b2be9d2d4050f2d30cbb306b34f data/minecraft/tags/items/trimmable_arm
 9c01ba5c2837c6d506fea127ca2a1b2ba24e2fe0 data/minecraft/tags/items/trim_materials.json
 a4acb3623320f801e89e3451f8b7d9e2246f99d0 data/minecraft/tags/items/walls.json
 6c25715524e8df396dd757255895117ff2451b25 data/nethersdelight/tags/items/tools/machetes.json
-81fb1b18afaa14ae90800b23c32de565d1389bb3 data/oreganized/tags/items/crystal_glass.json
-f1dfddab1e3f2dec1e7ed1c3fbf9f6a7f261cf08 data/oreganized/tags/items/crystal_glass_panes.json
+3b51fab996629abc355d06099a91365aa7abd266 data/oreganized/tags/items/crystal_glass.json
+69fb7b2bb25220f70b8bf3f780aaabbb3dfe2eca data/oreganized/tags/items/crystal_glass_panes.json
 bf2ad799074f5c44acee490bdf3d3ae81d56997b data/oreganized/tags/items/gargoyle_snack.json
 4d89056c908550931c1f2008f9817f5d3ff7aa68 data/oreganized/tags/items/has_kinetic_damage.json
 376b7c9ff449a4b98cb7b1f65b47d658c4e39428 data/oreganized/tags/items/lighter_than_lead.json

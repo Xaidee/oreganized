@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oreganized:block/mint_crystal_glass_in"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oreganized:block/slate_crystal_glass_rot"
+  }
+}

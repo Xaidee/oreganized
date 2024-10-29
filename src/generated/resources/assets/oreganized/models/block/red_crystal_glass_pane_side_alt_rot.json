@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side_alt",
   "textures": {
-    "edge": "oreganized:block/red_crystal_glass_pane_top",
+    "edge": "minecraft:block/red_stained_glass_pane_top",
     "pane": "oreganized:block/red_crystal_glass_rot"
   }
 }

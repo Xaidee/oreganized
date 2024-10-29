@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "dye_depot:block/verdant_stained_glass_pane_top",
+    "pane": "oreganized:block/verdant_crystal_glass"
+  }
+}

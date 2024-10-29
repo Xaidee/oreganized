@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oreganized:block/ginger_crystal_glass"
+  }
+}

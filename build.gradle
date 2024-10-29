@@ -2,11 +2,13 @@ buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: "${forgegradle_version}", changing: true
         classpath "org.spongepowered:mixingradle:${mixingradle_version}"
+        classpath group: 'org.parchmentmc.librarian.forgegradle', name: 'org.parchmentmc.librarian.forgegradle.gradle.plugin', version: '1.+'
     }
 }
 
@@ -14,6 +16,7 @@ apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'maven-publish'
 
 archivesBaseName = "${mod_name} ${minecraft_version}"
@@ -27,7 +30,8 @@ mixin {
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'official', version: minecraft_version
+    mappings channel: 'parchment', version: '2023.09.03-1.20.1'
+    //mappings channel: 'official', version: minecraft_version
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -41,7 +45,7 @@ minecraft {
         }
 
         data {
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), "--existing-mod", "blueprint", "--existing-mod", "shieldexp"
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), "--existing-mod", "blueprint", "--existing-mod", "shieldexp", "--existing-mod", "dye_depot"
             taskName 'Data'
         }
 
@@ -113,6 +117,7 @@ dependencies {
     runtimeOnly(fg.deobf("maven.modrinth:scannable:${scannable_version}"))
     runtimeOnly(fg.deobf("maven.modrinth:architectury-api:${architectury_version}"))
     runtimeOnly(fg.deobf("maven.modrinth:moonlight:${moonlight_lib_version}"))
+    runtimeOnly(fg.deobf("maven.modrinth:dye-depot:${dye_depot_version}"))
 
     /// Utilities for the development environment
     //runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_version}")

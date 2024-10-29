@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "type=0": {
+      "model": "oreganized:block/maroon_crystal_glass"
+    },
+    "type=1": {
+      "model": "oreganized:block/maroon_crystal_glass_rot"
+    },
+    "type=2": {
+      "model": "oreganized:block/maroon_crystal_glass_in"
+    },
+    "type=3": {
+      "model": "oreganized:block/maroon_crystal_glass_out"
+    }
+  }
+}

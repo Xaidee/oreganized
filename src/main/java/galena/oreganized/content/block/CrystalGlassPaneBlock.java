@@ -25,6 +25,6 @@ public class CrystalGlassPaneBlock extends StainedGlassPaneBlock implements ICry
     @Override
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(TYPE, getType(context));
+        return super.getStateForPlacement(context).setValue(TYPE, getType(context));
     }
 }

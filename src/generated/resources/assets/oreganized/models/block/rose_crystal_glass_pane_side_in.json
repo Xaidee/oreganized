@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "edge": "dye_depot:block/rose_stained_glass_pane_top",
+    "pane": "oreganized:block/rose_crystal_glass_in"
+  }
+}

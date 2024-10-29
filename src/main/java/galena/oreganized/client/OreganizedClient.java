@@ -72,7 +72,6 @@ public class OreganizedClient {
 
     private static void registerBlockRenderers() {
         RenderType cutout = RenderType.cutout();
-        RenderType mipped = RenderType.cutoutMipped();
         RenderType translucent = RenderType.translucent();
 
         render(OBlocks.LEAD_DOOR, cutout);
@@ -80,10 +79,8 @@ public class OreganizedClient {
         render(OBlocks.LEAD_BARS, cutout);
         render(OBlocks.GARGOYLE, cutout);
 
-        for (int i = 0; OBlocks.CRYSTAL_GLASS.size() > i; i++) {
-            render(OBlocks.CRYSTAL_GLASS.get(i), translucent);
-            render(OBlocks.CRYSTAL_GLASS_PANES.get(i), translucent);
-        }
+        OBlocks.CRYSTAL_GLASS.forEach((c, b) -> render(b, translucent));
+        OBlocks.CRYSTAL_GLASS_PANES.forEach((c, b) -> render(b, translucent));
 
         render(OBlocks.GROOVED_ICE, translucent);
     }

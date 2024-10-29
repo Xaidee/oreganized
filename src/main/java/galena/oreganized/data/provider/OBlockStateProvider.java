@@ -1,6 +1,7 @@
 package galena.oreganized.data.provider;
 
 import galena.oreganized.Oreganized;
+import galena.oreganized.compat.ColorCompat;
 import galena.oreganized.content.block.BulbBlock;
 import galena.oreganized.content.block.CrystalGlassBlock;
 import galena.oreganized.content.block.CrystalGlassPaneBlock;
@@ -11,6 +12,7 @@ import galena.oreganized.content.block.MoltenLeadCauldronBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CrossCollisionBlock;
 import net.minecraft.world.level.block.DoorBlock;
@@ -151,7 +153,7 @@ public abstract class OBlockStateProvider extends BlockStateProvider {
                         Oreganized.modLoc("block/" + name(block) + "_out"))).addModel();
     }
 
-    public void crystalGlassPaneBlock(Supplier<? extends Block> pane, Supplier<? extends Block> fullBlock) {
+    public void crystalGlassPaneBlock(DyeColor color, Supplier<? extends Block> pane, Supplier<? extends Block> fullBlock) {
         String baseName = name(fullBlock);
         String paneName = name(pane);
         MultiPartBlockStateBuilder builder = getMultipartBuilder(pane.get());
@@ -161,9 +163,10 @@ public abstract class OBlockStateProvider extends BlockStateProvider {
                 Direction dir = e.getKey();
                 if (dir.getAxis().isHorizontal()) {
                     boolean alt = dir == Direction.SOUTH;
-                    builder.part().modelFile(models().panePost(paneName + "_post" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)), Oreganized.modLoc("block/" + paneName + "_top"))).addModel().condition(CrystalGlassPaneBlock.TYPE, finalI).end()
-                            .part().modelFile(alt || dir == Direction.WEST ? models().paneSideAlt(paneName + "_side_alt" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)), Oreganized.modLoc("block/" + paneName + "_top")) :
-                                    models().paneSide(paneName + "_side" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)), Oreganized.modLoc("block/" + paneName + "_top"))).rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
+                    var topTexture = new ResourceLocation(ColorCompat.getNamespace(color), "block/" + color.getSerializedName() + "_stained_glass_pane_top");
+                    builder.part().modelFile(models().panePost(paneName + "_post" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)), topTexture)).addModel().condition(CrystalGlassPaneBlock.TYPE, finalI).end()
+                            .part().modelFile(alt || dir == Direction.WEST ? models().paneSideAlt(paneName + "_side_alt" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)), topTexture) :
+                                    models().paneSide(paneName + "_side" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)), topTexture)).rotationY(dir.getAxis() == Direction.Axis.X ? 90 : 0).addModel()
                             .condition(e.getValue(), true).condition(CrystalGlassPaneBlock.TYPE, finalI).end()
                             .part().modelFile(alt || dir == Direction.EAST ? models().paneNoSideAlt(paneName + "_noside_alt" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI))) :
                                     models().paneNoSide(paneName + "_noside" + suffixByIndex(finalI), Oreganized.modLoc("block/" + baseName + suffixByIndex(finalI)))).rotationY(dir == Direction.WEST ? 270 : dir == Direction.SOUTH ? 90 : 0).addModel()

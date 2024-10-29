@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oreganized:block/navy_crystal_glass"
+  }
+}
