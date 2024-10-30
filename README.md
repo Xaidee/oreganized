@@ -25,10 +25,6 @@
   <a href="https://twitter.com/TeamGalena">
     <img alt="Twitter" src="https://img.shields.io/badge/Follow on Twitter-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=X&logoColor=white">
   </a>
-
-  <a href="https://www.curseforge.com/minecraft/mc-mods/oreganized">
-    <img alt="CurseForge" src="https://img.shields.io/badge/Curseforge-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=Curseforge&logoColor=white">
-  </a>
   
   <a href="https://www.patreon.com/teamgalena">
     <img alt="Patreon" src="https://img.shields.io/badge/Patreon-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=Patreon&logoColor=white">
