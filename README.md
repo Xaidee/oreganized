@@ -23,7 +23,7 @@
   </a>
 
   <a href="https://twitter.com/TeamGalena">
-    <img alt="Twitter" src="https://img.shields.io/badge/Follow on Twitter-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=X&logoColor=white">
+    <img alt="Twitter" src="https://img.shields.io/badge/Twitter-Team_Galena?label=&color=ff8c5a&labelColor=525474&style=for-the-badge&logo=X&logoColor=white">
   </a>
   
   <a href="https://www.patreon.com/teamgalena">
