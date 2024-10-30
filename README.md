@@ -4,7 +4,11 @@
 
 <p align="center">
 
-  <img alt="CurseForge" src="https://img.shields.io/modrinth/game-versions/oreganized?label=&color=525474&style=for-the-badge">
+  <img alt="Available Versions" src="https://img.shields.io/modrinth/game-versions/oreganized?label=&color=525474&style=for-the-badge">
+
+</p>
+
+<p align="center">
 
   <a href="https://discord.gg/JmMf7CEKsx">
     <img alt="Discord" src="https://img.shields.io/discord/780149719611473930?color=ff8c5a&label=%20&labelColor=525474&logoColor=white&style=for-the-badge&logo=discord">
