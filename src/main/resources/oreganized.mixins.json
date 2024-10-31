@@ -5,8 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractArrowMixin", "BlockMixin", "CrossbowMixin", "DispenserBlockMixin", "EnchantmentHelperMixin", "EntityMixin",
-    "FoodDataMixin", "IceBlockMixin", "LivingEntityMixin", "MobEffectInstanceMixin", "PillagerMixin", "PlayerMixin",
-    "compat.AirCurrentMixin", "compat.BellowBlockTileMixin", "compat.LogStrippingFakeRecipesMixin"
+    "FoodDataMixin", "IceBlockMixin", "LivingEntityMixin", "MobEffectInstanceMixin", "MobMixin", "PillagerMixin",
+    "PlayerMixin", "compat.AirCurrentMixin", "compat.BellowBlockTileMixin", "compat.LogStrippingFakeRecipesMixin"
   ],
   "client": [
     "client.GuiMixin", "client.HumanoidArmorLayerAccessor", "client.HumanoidArmorLayerMixin",

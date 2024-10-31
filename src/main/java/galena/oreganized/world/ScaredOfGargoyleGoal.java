@@ -1,8 +1,7 @@
 package galena.oreganized.world;
 
-import galena.oreganized.Oreganized;
 import net.minecraft.nbt.NbtUtils;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -10,13 +9,10 @@ import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.entity.EntityEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nullable;
+import java.util.EnumSet;
 
-@Mod.EventBusSubscriber(modid = Oreganized.MOD_ID)
 public class ScaredOfGargoyleGoal extends Goal {
 
     public static final String AVOID_TAG_KEY = "ScaredByGargoyle";
@@ -25,11 +21,9 @@ public class ScaredOfGargoyleGoal extends Goal {
 
     private final PathfinderMob mob;
 
-    @SubscribeEvent
-    public static void onMobSpawn(EntityEvent.EntityConstructing event) {
-        if(!(event.getEntity() instanceof Mob entity)) return;
-        if (entity.getMobType() == MobType.UNDEAD && entity instanceof PathfinderMob mob) {
-            entity.goalSelector.addGoal(1, new ScaredOfGargoyleGoal(mob));
+    public static void addGoal(Entity entity) {
+        if (entity instanceof PathfinderMob mob && mob.getMobType() == MobType.UNDEAD) {
+            mob.goalSelector.addGoal(1, new ScaredOfGargoyleGoal(mob));
         }
     }
 
@@ -43,6 +37,7 @@ public class ScaredOfGargoyleGoal extends Goal {
     public ScaredOfGargoyleGoal(PathfinderMob mob) {
         this.mob = mob;
         this.navigation = mob.getNavigation();
+        this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
     }
 
     @Override
