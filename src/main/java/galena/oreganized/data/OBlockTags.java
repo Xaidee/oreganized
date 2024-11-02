@@ -3,6 +3,7 @@ package galena.oreganized.data;
 import galena.oreganized.Oreganized;
 import galena.oreganized.index.OBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
@@ -51,8 +52,8 @@ public class OBlockTags extends IntrinsicHolderTagsProvider<Block> {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         // Oreganized
-        OBlocks.CRYSTAL_GLASS.forEach((c, b) -> tag(CRYSTAL_GLASS).add(b.get()));
-        OBlocks.CRYSTAL_GLASS_PANES.forEach((c, b) -> tag(CRYSTAL_GLASS_PANES).add(b.get()));
+        OBlocks.CRYSTAL_GLASS.forEach((c, b) -> tag(CRYSTAL_GLASS).addOptional(BuiltInRegistries.BLOCK.getKey(b.get())));
+        OBlocks.CRYSTAL_GLASS_PANES.forEach((c, b) -> tag(CRYSTAL_GLASS_PANES).addOptional(BuiltInRegistries.BLOCK.getKey(b.get())));
 
         tag(FIRE_SOURCE).addTag(BlockTags.FIRE).addTag(BlockTags.CAMPFIRES);
         tag(STONE_TYPES_GLANCE).add(
