@@ -130,8 +130,6 @@ dependencies {
     runtimeOnly(fg.deobf("maven.modrinth:scannable:${scannable_version}"))
     runtimeOnly(fg.deobf("maven.modrinth:architectury-api:${architectury_version}"))
     ///
-
-    runtimeOnly(fg.deobf("com.possible-triangle:debug_entities:0.0.0-dev"))
 }
 
 jar {

@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-// 1.20.1	2024-11-02T14:26:23.3307796	Oreganized Block Tags
-=======
-// 1.20.1	2024-11-10T10:42:18.5216234	Oreganized Block Tags
->>>>>>> b08426a (various fixes:)
-=======
-// 1.20.1	2024-11-10T11:07:39.5031561	Oreganized Block Tags
->>>>>>> 744aca0 (make ore cloud mechanic use block tag (closes #68))
+// 1.20.1	2024-11-10T11:12:35.6939457	Oreganized Block Tags
 7a2d68d81bc5ee59f9a2f4ba68ddb39bfd9c875d data/forge/tags/blocks/glass.json
 d96b4f83e03abe39a1b97d92b7818c8f6b2e5c68 data/forge/tags/blocks/glass_panes.json
 d062c23ad5308b7de0b2e86f6531ea724530f898 data/forge/tags/blocks/melts_lead.json
@@ -29,15 +21,7 @@ bff6697a058fddfe9e14615bc043fcb2071fd6fc data/forge/tags/blocks/storage_blocks/s
 7a2d68d81bc5ee59f9a2f4ba68ddb39bfd9c875d data/minecraft/tags/blocks/impermeable.json
 f7079c32fc948b65cb486bea80e2dc93d13ce577 data/minecraft/tags/blocks/mineable/axe.json
 8794e7f7fcf41783b7738503b68f535efa58d511 data/minecraft/tags/blocks/mineable/pickaxe.json
-<<<<<<< HEAD
-<<<<<<< HEAD
-0dcc07da48ab9049518b04b94ad46c15613ab136 data/minecraft/tags/blocks/mineable/shovel.json
-=======
-6ee6c3bd76764a25936bd20bc0e77f3da017b866 data/minecraft/tags/blocks/mineable/shovel.json
->>>>>>> b08426a (various fixes:)
-=======
-9b9fb7a97193a97f86b1bda58bae9d9cd41f33af data/minecraft/tags/blocks/mineable/shovel.json
->>>>>>> 744aca0 (make ore cloud mechanic use block tag (closes #68))
+47b09d43f5f7275eb529a8dc98eba27574975f1c data/minecraft/tags/blocks/mineable/shovel.json
 bb86ac7ab19373da790ec5711f473614e4b62d79 data/minecraft/tags/blocks/needs_iron_tool.json
 dc9cc2dca9fa3a28a0458ec282e3e0fe81999ee1 data/minecraft/tags/blocks/needs_stone_tool.json
 e9873026bc587ab0729bda85f9d2a6ca7790d410 data/minecraft/tags/blocks/slabs.json
@@ -45,21 +29,10 @@ e9873026bc587ab0729bda85f9d2a6ca7790d410 data/minecraft/tags/blocks/slabs.json
 e231a716e19756d6a2326e873062dab206b37184 data/minecraft/tags/blocks/stairs.json
 0071c009a80f1ab7661b261dcf94799070b8cbea data/minecraft/tags/blocks/trapdoors.json
 a4acb3623320f801e89e3451f8b7d9e2246f99d0 data/minecraft/tags/blocks/walls.json
-<<<<<<< HEAD
-143a34cb0f03223147aa614479cc4fcf4c38ca14 data/oreganized/tags/blocks/blows_lead_cloud.json
-<<<<<<< HEAD
-f9d5b4f4bb62c6c270431c1f92e4eb95efbb173f data/oreganized/tags/blocks/crystal_glass.json
-6fc54c4c542bc17e26f48437be5ed4c75d47c275 data/oreganized/tags/blocks/crystal_glass_panes.json
-=======
-42af1c0623a9edeb4076b053e189a11724465750 data/oreganized/tags/blocks/crystal_glass.json
-d5117b38a1a3a793e26bcfc9ede33c2d3177862a data/oreganized/tags/blocks/crystal_glass_panes.json
->>>>>>> b08426a (various fixes:)
-=======
 0cd969093058a9540cd19a93abf28ceee4182438 data/oreganized/tags/blocks/blows_lead_cloud.json
 143a34cb0f03223147aa614479cc4fcf4c38ca14 data/oreganized/tags/blocks/creates_lead_cloud.json
-6a2769a1846f24bfec8630387d280c03375deede data/oreganized/tags/blocks/crystal_glass.json
-60c0fe5e4786e9696c355fcc4cfb9b129a8623c9 data/oreganized/tags/blocks/crystal_glass_panes.json
->>>>>>> 744aca0 (make ore cloud mechanic use block tag (closes #68))
+6cbe8739635b6f95437bdf4c96c91950a0bc11c6 data/oreganized/tags/blocks/crystal_glass.json
+dfc2c986c7bb7f9a413d466eede6a410da694a17 data/oreganized/tags/blocks/crystal_glass_panes.json
 6b73bb0ce38222c428d54ee64e82ffa1d96c64d7 data/oreganized/tags/blocks/fire_source.json
 eaca08d04b1742f418e6bc0964dd32cf16035d88 data/oreganized/tags/blocks/mineable/scribe.json
 0f64e9b9dc279dd460f6408313b130a37a0c9d86 data/oreganized/tags/blocks/no_silktouch_using_scribe.json

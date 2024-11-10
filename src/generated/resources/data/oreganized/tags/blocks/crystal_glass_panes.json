@@ -1,65 +1,7 @@
 {
   "values": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-    {
-      "id": "oreganized:red_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:purple_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:light_blue_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:pink_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:maroon_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:lime_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:rose_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:mint_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:beige_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:gray_crystal_glass_pane",
-      "required": false
-    },
     {
       "id": "oreganized:olive_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:navy_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:amber_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:verdant_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:blue_crystal_glass_pane",
       "required": false
     },
     {
@@ -67,31 +9,31 @@
       "required": false
     },
     {
-      "id": "oreganized:aqua_crystal_glass_pane",
+      "id": "oreganized:white_crystal_glass_pane",
       "required": false
     },
     {
-      "id": "oreganized:ginger_crystal_glass_pane",
+      "id": "oreganized:red_crystal_glass_pane",
       "required": false
     },
     {
-      "id": "oreganized:brown_crystal_glass_pane",
+      "id": "oreganized:navy_crystal_glass_pane",
       "required": false
     },
     {
-      "id": "oreganized:cyan_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:green_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:light_gray_crystal_glass_pane",
+      "id": "oreganized:purple_crystal_glass_pane",
       "required": false
     },
     {
       "id": "oreganized:coral_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:blue_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:aqua_crystal_glass_pane",
       "required": false
     },
     {
@@ -103,23 +45,19 @@
       "required": false
     },
     {
-      "id": "oreganized:white_crystal_glass_pane",
+      "id": "oreganized:beige_crystal_glass_pane",
       "required": false
     },
     {
-      "id": "oreganized:teal_crystal_glass_pane",
+      "id": "oreganized:lime_crystal_glass_pane",
       "required": false
     },
     {
-      "id": "oreganized:forest_crystal_glass_pane",
+      "id": "oreganized:gray_crystal_glass_pane",
       "required": false
     },
     {
-      "id": "oreganized:orange_crystal_glass_pane",
-      "required": false
-    },
-    {
-      "id": "oreganized:magenta_crystal_glass_pane",
+      "id": "oreganized:light_gray_crystal_glass_pane",
       "required": false
     },
     {
@@ -127,49 +65,68 @@
       "required": false
     },
     {
+      "id": "oreganized:teal_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:magenta_crystal_glass_pane",
+      "required": false
+    },
+    {
       "id": "oreganized:slate_crystal_glass_pane",
       "required": false
+    },
+    {
+      "id": "oreganized:verdant_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:forest_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:ginger_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:light_blue_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:cyan_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:maroon_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:orange_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:green_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:pink_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:amber_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:rose_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:brown_crystal_glass_pane",
+      "required": false
+    },
+    {
+      "id": "oreganized:mint_crystal_glass_pane",
+      "required": false
     }
-=======
-    "oreganized:beige_crystal_glass_pane",
-=======
->>>>>>> 744aca0 (make ore cloud mechanic use block tag (closes #68))
-    "oreganized:mint_crystal_glass_pane",
-    "oreganized:tan_crystal_glass_pane",
-    "oreganized:teal_crystal_glass_pane",
-    "oreganized:orange_crystal_glass_pane",
-    "oreganized:black_crystal_glass_pane",
-    "oreganized:gray_crystal_glass_pane",
-    "oreganized:aqua_crystal_glass_pane",
-    "oreganized:olive_crystal_glass_pane",
-    "oreganized:forest_crystal_glass_pane",
-    "oreganized:ginger_crystal_glass_pane",
-    "oreganized:light_blue_crystal_glass_pane",
-    "oreganized:navy_crystal_glass_pane",
-    "oreganized:light_gray_crystal_glass_pane",
-    "oreganized:magenta_crystal_glass_pane",
-    "oreganized:yellow_crystal_glass_pane",
-    "oreganized:slate_crystal_glass_pane",
-    "oreganized:green_crystal_glass_pane",
-    "oreganized:blue_crystal_glass_pane",
-    "oreganized:lime_crystal_glass_pane",
-    "oreganized:white_crystal_glass_pane",
-    "oreganized:maroon_crystal_glass_pane",
-    "oreganized:red_crystal_glass_pane",
-    "oreganized:verdant_crystal_glass_pane",
-    "oreganized:amber_crystal_glass_pane",
-    "oreganized:pink_crystal_glass_pane",
-<<<<<<< HEAD
-    "oreganized:coral_crystal_glass_pane"
->>>>>>> b08426a (various fixes:)
-=======
-    "oreganized:purple_crystal_glass_pane",
-    "oreganized:beige_crystal_glass_pane",
-    "oreganized:cyan_crystal_glass_pane",
-    "oreganized:rose_crystal_glass_pane",
-    "oreganized:coral_crystal_glass_pane",
-    "oreganized:indigo_crystal_glass_pane",
-    "oreganized:brown_crystal_glass_pane"
->>>>>>> 744aca0 (make ore cloud mechanic use block tag (closes #68))
   ]
 }
