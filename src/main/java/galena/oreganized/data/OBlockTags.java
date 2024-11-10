@@ -140,7 +140,7 @@ public class OBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 OBlocks.GROOVED_BLUE_ICE.get()
         );
 
-        OBlocks.WAXED_CONCRETE_POWDER.forEach((c, b) -> tag(BlockTags.MINEABLE_WITH_SHOVEL).add(b.get()));
+        OBlocks.WAXED_CONCRETE_POWDER.forEach((c, b) -> tag(BlockTags.MINEABLE_WITH_SHOVEL).addOptional(b.getId()));
 
         tag(BlockTags.NEEDS_STONE_TOOL).add(
                 OBlocks.LEAD_ORE.get(),

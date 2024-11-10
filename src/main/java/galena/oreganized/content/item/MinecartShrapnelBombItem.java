@@ -29,7 +29,7 @@ public class MinecartShrapnelBombItem extends MinecartItem {
 
 
     public MinecartShrapnelBombItem(AbstractMinecart.Type base, RegistryObject<EntityType<MinecartShrapnelBomb>> minecart) {
-        super(base, new Properties());
+        super(base, new Properties().stacksTo(1));
         this.minecart = minecart;
         DispenserBlock.registerBehavior(this, DISPENSE_ITEM_BEHAVIOR);
     }

@@ -50,8 +50,8 @@ public class ORecipes extends ORecipeProvider {
         compact(OBlocks.RAW_SILVER_BLOCK.get().asItem(), OItems.RAW_SILVER.get()).save(consumer);
         compact(OBlocks.RAW_LEAD_BLOCK.get().asItem(), OItems.RAW_LEAD.get()).save(consumer);
 
-        compact(OItems.SILVER_INGOT.get(), OItems.SILVER_NUGGET.get()).save(consumer);
-        compact(OItems.LEAD_INGOT.get(), OItems.LEAD_NUGGET.get()).save(consumer);
+        compact(OItems.SILVER_INGOT.get(), OItems.SILVER_NUGGET.get()).save(consumer, Oreganized.modLoc("silver_ingot_from_nuggets"));
+        compact(OItems.LEAD_INGOT.get(), OItems.LEAD_NUGGET.get()).save(consumer, Oreganized.modLoc("lead_ingot_from_nuggets"));
         compact(OItems.ELECTRUM_INGOT.get(), OItems.ELECTRUM_NUGGET.get()).save(consumer, Oreganized.modLoc("electrum_ingot_from_nuggets"));
         compact(Items.NETHERITE_INGOT, OItems.NETHERITE_NUGGET.get()).save(consumer, Oreganized.modLoc("netherite_ingot_from_nuggets"));
 

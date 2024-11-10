@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "alexsmobs:mimicube",
+      "required": false
+    },
+    {
+      "id": "caverns_and_chasms:mime",
+      "required": false
+    }
+  ]
+}

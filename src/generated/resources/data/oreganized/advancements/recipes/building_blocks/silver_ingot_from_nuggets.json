@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lead_nugget": {
+    "has_silver_nugget": {
       "conditions": {
         "items": [
           {
             "items": [
-              "oreganized:lead_nugget"
+              "oreganized:silver_nugget"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "oreganized:lead_ingot"
+        "recipe": "oreganized:silver_ingot_from_nuggets"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_lead_nugget",
+      "has_silver_nugget",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "oreganized:lead_ingot"
+      "oreganized:silver_ingot_from_nuggets"
     ]
   },
   "sends_telemetry_event": false

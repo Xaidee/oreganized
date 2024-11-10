@@ -104,6 +104,7 @@ public class OTags {
     public static class Entities {
 
         public static final TagKey<EntityType<?>> LIGHTER_THAN_LEAD = tag("lighter_than_lead");
+        public static final TagKey<EntityType<?>> BOLT_RESISTANT = tag("bolt_resistant");
 
         private static TagKey<EntityType<?>> tag(String name) {
             return EntityTypeTags.create(Oreganized.modLoc(name).toString());

@@ -66,6 +66,9 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 repositories {
     maven {
+        url = System.getenv()["LOCAL_MAVEN"]
+    }
+    maven {
         // location of the maven that hosts Blueprint
         name = "Jackson's Maven"
         url = "https://maven.jaackson.me"
@@ -130,6 +133,8 @@ dependencies {
     runtimeOnly(fg.deobf("maven.modrinth:scannable:${scannable_version}"))
     runtimeOnly(fg.deobf("maven.modrinth:architectury-api:${architectury_version}"))
     ///
+
+    runtimeOnly(fg.deobf("com.possible-triangle:debug_entities:0.0.0-dev"))
 }
 
 jar {

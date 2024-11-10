@@ -3,6 +3,7 @@ package galena.oreganized.content.entity;
 import galena.oreganized.index.OCriteriaTriggers;
 import galena.oreganized.index.OItems;
 import galena.oreganized.index.OSoundEvents;
+import galena.oreganized.index.OTags;
 import net.minecraft.core.Position;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -30,7 +31,8 @@ import java.util.stream.Stream;
 
 public class LeadBoltEntity extends AbstractArrow {
 
-    private static boolean canShootOff(ItemStack stack) {
+    private static boolean canShootOff(ItemStack stack, LivingEntity entity) {
+        if (entity.getType().is(OTags.Entities.BOLT_RESISTANT)) return false;
         if (stack.isEmpty()) return false;
         if (stack.getEnchantmentLevel(Enchantments.BINDING_CURSE) > 0) return false;
         return true;
@@ -41,7 +43,7 @@ public class LeadBoltEntity extends AbstractArrow {
         if (entity.isUsingItem()) {
             var hand = entity.getUsedItemHand();
             var using = entity.getItemInHand(hand);
-            if (!canShootOff(using)) return null;
+            if (!canShootOff(using, entity)) return null;
             if (using.getItem() instanceof ShieldItem) {
                 return switch (hand) {
                     case OFF_HAND -> EquipmentSlot.OFFHAND;
@@ -51,7 +53,7 @@ public class LeadBoltEntity extends AbstractArrow {
         }
 
         var slots = Stream.of(EquipmentSlot.CHEST, EquipmentSlot.FEET, EquipmentSlot.HEAD, EquipmentSlot.LEGS)
-                .filter(it -> canShootOff(entity.getItemBySlot(it)))
+                .filter(it -> canShootOff(entity.getItemBySlot(it), entity))
                 .toList();
 
         if (slots.isEmpty()) return null;
@@ -91,7 +93,7 @@ public class LeadBoltEntity extends AbstractArrow {
                     playSound(item.getEquipSound());
                 }
 
-                if (result.getEntity() instanceof Pillager &&  knockedOff.is(ItemTags.BANNERS)) {
+                if (result.getEntity() instanceof Pillager && knockedOff.is(ItemTags.BANNERS)) {
                     if (getOwner() instanceof ServerPlayer player) {
                         OCriteriaTriggers.KNOCKED_BANNER_OFF.trigger(player);
                     }
