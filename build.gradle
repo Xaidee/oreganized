@@ -66,9 +66,6 @@ sourceSets.main.resources.srcDir 'src/generated/resources'
 
 repositories {
     maven {
-        url = System.getenv()["LOCAL_MAVEN"]
-    }
-    maven {
         // location of the maven that hosts Blueprint
         name = "Jackson's Maven"
         url = "https://maven.jaackson.me"
