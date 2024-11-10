@@ -1,5 +1,6 @@
 package galena.oreganized.content.block;
 
+import galena.oreganized.Oreganized;
 import galena.oreganized.OreganizedConfig;
 import galena.oreganized.index.OCriteriaTriggers;
 import galena.oreganized.index.OEffects;
@@ -8,30 +9,26 @@ import galena.oreganized.index.OParticleTypes;
 import galena.oreganized.index.OTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.stream.Stream;
 
-public class LeadOreBlock extends DropExperienceBlock {
-
-    public LeadOreBlock(Properties properties) {
-        super(properties);
-    }
+@Mod.EventBusSubscriber(modid = Oreganized.MOD_ID)
+public class LeadOreBlock {
 
     private static Stream<MobEffectInstance> getEffects(int durationMultiplier) {
         if (OreganizedConfig.COMMON.poisonInsteadOfStunning.get()) {
@@ -44,29 +41,31 @@ public class LeadOreBlock extends DropExperienceBlock {
         );
     }
 
-    @Override
-    public void spawnAfterBreak(BlockState state, ServerLevel level, BlockPos pos, ItemStack stack, boolean dropXp) {
-        super.spawnAfterBreak(state, level, pos, stack, dropXp);
-
-        if (shouldSpawnCloud(state, level, pos, stack)) {
+    public static void trySpawnLeadCloud(BlockState state, Level level, BlockPos pos, ItemStack held) {
+        if (shouldSpawnCloud(state, level, pos, held)) {
             spawnCloud(level, pos, 2F);
         }
     }
 
-    @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
-                                       boolean willHarvest, FluidState fluid) {
-        var stack = player.getItemInHand(player.getUsedItemHand());
-        if (shouldSpawnCloud(state, level, pos, stack) && player instanceof ServerPlayer serverPlayer) {
-            OCriteriaTriggers.IN_LEAD_CLOUD.trigger(serverPlayer);
-        }
+    @SubscribeEvent
+    public static void onBreak(BlockEvent.BreakEvent event) {
+        var state = event.getState();
+        var pos = event.getPos();
 
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+        if (!(event.getLevel() instanceof Level level)) return;
+        if (!(event.getPlayer() instanceof ServerPlayer player)) return;
+
+        var held = player.getMainHandItem();
+
+        if (shouldSpawnCloud(state, level, pos, held)) {
+            OCriteriaTriggers.IN_LEAD_CLOUD.trigger(player);
+        }
     }
 
-    protected boolean shouldSpawnCloud(BlockState state, LevelAccessor level, BlockPos pos, ItemStack stack) {
+    private static boolean shouldSpawnCloud(BlockState state, LevelAccessor level, BlockPos pos, ItemStack stack) {
         if (!OreganizedConfig.COMMON.leadDustCloud.get()) return false;
         if (stack.is(OItems.SCRIBE.get()) || EnchantmentHelper.hasSilkTouch(stack)) return false;
+        if (!state.is(OTags.Blocks.CREATES_LEAD_CLOUD)) return false;
 
         for (var direction : Direction.values()) {
             var adjacentState = level.getBlockState(pos.relative(direction));
@@ -99,7 +98,7 @@ public class LeadOreBlock extends DropExperienceBlock {
             var frontPos = pos.relative(facing, distance);
             var frontState = level.getBlockState(frontPos);
 
-            if (frontState.getBlock() instanceof LeadOreBlock) {
+            if (frontState.is(OTags.Blocks.BLOWS_LEAD_CLOUD)) {
                 var vec = Vec3.atCenterOf(frontPos);
                 level.addParticle(OParticleTypes.LEAD_BLOW.get(),
                         vec.x, vec.y, vec.z,

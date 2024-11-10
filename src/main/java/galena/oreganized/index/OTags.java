@@ -92,6 +92,7 @@ public class OTags {
         public static final TagKey<Block> MELTS_LEAD = forgeTag("melts_lead");
         public static final TagKey<Block> PREVENTS_LEAD_CLOUD = tag("prevents_lead_cloud");
         public static final TagKey<Block> BLOWS_LEAD_CLOUD = tag("blows_lead_cloud");
+        public static final TagKey<Block> CREATES_LEAD_CLOUD = tag("creates_lead_cloud");
 
         private static TagKey<Block> tag(String name) {
             return BlockTags.create(Oreganized.modLoc(name));

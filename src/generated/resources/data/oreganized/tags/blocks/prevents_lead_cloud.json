@@ -1,5 +1,9 @@
 {
   "values": [
-    "minecraft:water"
+    "minecraft:water",
+    {
+      "id": "spelunkery:spring_water",
+      "required": false
+    }
   ]
 }

@@ -20,6 +20,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 import static galena.oreganized.index.OTags.Blocks.BLOWS_LEAD_CLOUD;
+import static galena.oreganized.index.OTags.Blocks.CREATES_LEAD_CLOUD;
 import static galena.oreganized.index.OTags.Blocks.CRYSTAL_GLASS;
 import static galena.oreganized.index.OTags.Blocks.CRYSTAL_GLASS_PANES;
 import static galena.oreganized.index.OTags.Blocks.FIRE_SOURCE;
@@ -216,10 +217,15 @@ public class OBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 .addTags(BlockTags.MINEABLE_WITH_PICKAXE);
 
         tag(PREVENTS_LEAD_CLOUD)
-                .add(Blocks.WATER);
+                .add(Blocks.WATER)
+                .addOptional(new ResourceLocation("spelunkery", "spring_water"));
 
-        tag(BLOWS_LEAD_CLOUD)
+        tag(CREATES_LEAD_CLOUD)
                 .addTags(ORES_LEAD)
                 .addTags(STORAGE_BLOCKS_RAW_LEAD);
+
+        tag(BLOWS_LEAD_CLOUD)
+                .addTags(CREATES_LEAD_CLOUD);
+
     }
 }
